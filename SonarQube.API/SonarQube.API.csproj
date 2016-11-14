@@ -4,17 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{9D2FB4D9-DF8B-4A9A-92B1-25DB534014A3}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{9CCD2B62-3DC0-463A-B146-EC5F1FE84AEA}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>SonarQube.API</RootNamespace>
-    <AssemblyName>LoadAllIssues</AssemblyName>
+    <AssemblyName>SonarQube.API</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -33,10 +30,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -47,48 +40,36 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Class1.cs" />
+    <Compile Include="Logic\IRestGetObject.cs" />
     <Compile Include="Logic\IRestGetter.cs" />
     <Compile Include="Logic\IRestParameters.cs" />
-    <Compile Include="Model\Rule.cs" />
-    <Compile Include="Response\PageBase.cs" />
-    <Compile Include="Response\RulesShow.cs" />
-    <Compile Include="Services\ComponentMeasuresService.cs" />
-    <Compile Include="Logic\IRestGetObject.cs" />
     <Compile Include="Logic\RestGetBase.cs" />
-    <Compile Include="Logic\RestParameters.cs" />
     <Compile Include="Logic\RestGetter.cs" />
+    <Compile Include="Logic\RestParameters.cs" />
+    <Compile Include="Model\ComponentMeasures.cs" />
+    <Compile Include="Model\ComponentPeriod.cs" />
     <Compile Include="Model\Issue.cs" />
     <Compile Include="Model\Measure.cs" />
     <Compile Include="Model\MeasurePeriod.cs" />
     <Compile Include="Model\Metric.cs" />
     <Compile Include="Model\Paging.cs" />
-    <Compile Include="Model\ComponentPeriod.cs" />
     <Compile Include="Model\Project.cs" />
-    <Compile Include="Response\ProjectsIndex.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="Model\Rule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Response\IPage.cs" />
+    <Compile Include="Response\PageBase.cs" />
+    <Compile Include="Response\ProjectsIndex.cs" />
+    <Compile Include="Response\RulesSearch.cs" />
+    <Compile Include="Response\RulesShow.cs" />
+    <Compile Include="Services\ComponentMeasuresService.cs" />
     <Compile Include="Services\ISonarQubeServiceBase.cs" />
     <Compile Include="Services\IssuesSearchService.cs" />
     <Compile Include="Services\ProjectsIndexService.cs" />
-    <Compile Include="Response\RulesSearch.cs" />
     <Compile Include="Services\RuleShowService.cs" />
     <Compile Include="Services\RulesSearchService.cs" />
     <Compile Include="Services\SonarQubePagedServiceBase.cs" />
     <Compile Include="Utilities\EffortConversion.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Model\ComponentMeasures.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\SonarQube.API\SonarQube.API.csproj">
-      <Project>{9ccd2b62-3dc0-463a-b146-ec5f1fe84aea}</Project>
-      <Name>SonarQube.API</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
