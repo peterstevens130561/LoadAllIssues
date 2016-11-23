@@ -1,4 +1,5 @@
-﻿using LoadAllIssues.Model;
+﻿
+using SonarQube.API.Model;
 using System;
 using System.Collections.Generic;
 

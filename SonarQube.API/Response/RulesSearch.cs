@@ -1,6 +1,7 @@
-﻿using LoadAllIssues.Model;
+﻿
 using System.Collections.Generic;
 using System;
+using SonarQube.API.Model;
 
 namespace SonarQube.API.Response
 {

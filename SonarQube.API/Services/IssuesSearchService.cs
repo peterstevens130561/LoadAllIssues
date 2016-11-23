@@ -1,28 +1,26 @@
 ﻿
+using SonarQube.API.Logic;
 using SonarQube.API.Model;
-using System;
+using SonarQube.API.Response;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace SonarQube.API.Services
 {
-    public class IssuesSearchService : SonarQubePagedServiceBase<Issue, IssuesSearchPage>
+    public class IssuesSearchService : SonarQubePagedServiceBase<Issue, IssuesSearchPage>, IIssuesSearchService
 
     {
-        private readonly SonarQubePagedServiceBase<Issue, IssuesSearchPage> restGetService;
 
         public IssuesSearchService(RestGetter restGetter) : base(restGetter, "issues/search") { }
   
 
-        internal IssuesSearchService SetProjectKeys(string projectKeys)
+        public IIssuesSearchService SetProjectKeys(string projectKeys)
         {
             SetParameter("projectKeys", projectKeys);
             return this;
         }
 
-        internal IssuesSearchService SetStatuses(string statuses)
+        public IIssuesSearchService SetStatuses(string statuses)
         {
             SetParameter("statuses", statuses);
             return this;

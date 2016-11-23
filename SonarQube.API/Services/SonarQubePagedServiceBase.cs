@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System;
 using SonarQube.API.Response;
+using SonarQube.API.Logic;
 
 namespace SonarQube.API.Services
 {

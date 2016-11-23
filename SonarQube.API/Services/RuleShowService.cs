@@ -1,5 +1,6 @@
 ﻿
 using SonarQube.API.Logic;
+using SonarQube.API.Response;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace SonarQube.API.Services
 {
-    class RulesShowService : SonarQubeServiceBase<RulesShow>
+    public class RulesShowService : SonarQubeServiceBase<RulesShow>,IRulesShowService
     {
 
 
@@ -16,13 +17,13 @@ namespace SonarQube.API.Services
         { 
         }
 
-        public RulesShowService SetKey(string key)
+        public IRulesShowService SetKey(string key)
         {
             SetParameter("key", key);
             return this;
         }
 
-        public RulesShowService SetActives(Boolean show)
+        public IRulesShowService SetActives(bool show)
         {
             SetParameter("actives", show);
             return this;

@@ -1,35 +1,16 @@
 ﻿
 using SonarQube.API.Logic;
+using SonarQube.API.Model;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SonarQube.API.Services
 {
-    public  class ComponentMeasuresService : SonarQubeServiceBase<ComponentMeasures>
+     internal class ComponentMeasuresService :  SonarQubeGetService<ComponentMeasures, IComponentMeasuresParameters> , IComponentMeasuresService
     {
-        public ComponentMeasuresService(RestGetter restGetter) : base(restGetter, "measures/component")
-        {
-        }
 
-        public ComponentMeasuresService SetComponentId(string value)
+        public ComponentMeasuresService(RestGetter restGetter) : base(restGetter, "measures/component", new ComponentMeasuresParameters())
         {
-            SetParameter("componentId", value);
-            return this;
-        }
-        public ComponentMeasuresService SetComponentKey(String componentKey)
-        {
-            SetParameter("componentKey", componentKey);
-            return this;
-       }
 
-
-        public ComponentMeasuresService SetMetricKeys(string metricKeys)
-        {
-            SetParameter("metricKeys", metricKeys);
-            return this;
         }
 
     }

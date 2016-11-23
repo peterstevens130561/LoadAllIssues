@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using LoadAllIssues.Services;
+using SonarQube.API.Model;
 
 namespace SonarQube.API.Response
 {
@@ -7,7 +7,7 @@ namespace SonarQube.API.Response
     {
         public int Total { get; set; }
         public int P { get; set; }
-        public int PS { get; set; }
+        public int Ps { get; set; }
 
         public Paging Paging { get; set; }
         public abstract IList<T> Items { get; }

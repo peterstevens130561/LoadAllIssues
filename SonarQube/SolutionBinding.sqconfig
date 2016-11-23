@@ -1,0 +1,10 @@
+{
+  "ServerUri": "http://bhidftweb01:9005/",
+  "ProjectKey": "SonarQubeTools",
+  "Profiles": {
+    "CSharp": {
+      "ProfileKey": "cs-cleansweep-58079",
+      "ProfileTimestamp": "2016-11-16T19:04:12+01:00"
+    }
+  }
+}

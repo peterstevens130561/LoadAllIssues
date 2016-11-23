@@ -1,4 +1,5 @@
-﻿using LoadAllIssues.Model;
+﻿
+using SonarQube.API.Model;
 using System.Collections.Generic;
 
 namespace SonarQube.API.Response
@@ -8,7 +9,7 @@ namespace SonarQube.API.Response
     {
         int Total { get; set; }
         int P { get; set; }
-        int PS { get; set; }
+        int Ps{ get; set; }
 
         Paging Paging { get; set; }
 

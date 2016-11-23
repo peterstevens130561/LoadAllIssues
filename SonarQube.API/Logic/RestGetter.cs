@@ -6,24 +6,28 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SonarQube.API.Logic
+namespace SonarQube.API.Logic { 
     public class RestGetter : IRestGetter
     {
         private string url;
-        private StringBuilder sb = new StringBuilder();
         private string path;
         private readonly WebClient webClient;
-
-        public RestGetter(WebClient webClient,string url)
+        public RestGetter(WebClient webClient)
         {
             this.webClient = webClient;
-            this.url = url;
         }
 
         public IRestGetter SetPath(string path)
         {
             this.path = path;
             return this;
+        }
+
+        public void Connect(string url, string  username, string password)
+        {
+            this.url = url;
+            webClient.UseDefaultCredentials = false;
+            webClient.Credentials = new NetworkCredential(username, password);
         }
 
         public T Execute<T>(IRestParameters parameters) 

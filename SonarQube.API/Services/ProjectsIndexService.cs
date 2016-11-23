@@ -1,19 +1,17 @@
 ﻿
 using SonarQube.API.Logic;
-using System;
+using SonarQube.API.Model;
+using SonarQube.API.Response;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SonarQube.API.Services
 {
-    class ProjectsIndexService: SonarQubeServiceBase<ProjectsIndex>
+    public class ProjectsIndexService: SonarQubeServiceBase<IList<Project>>,IProjectsIndexService
     {
 
         public ProjectsIndexService(RestGetter restGetter): base(restGetter, "projects/index") { }
        
-        public ProjectsIndexService SetKey(string projectKey)
+        public IProjectsIndexService SetKey(string projectKey)
         {
             SetParameter("key", projectKey);
             return this;

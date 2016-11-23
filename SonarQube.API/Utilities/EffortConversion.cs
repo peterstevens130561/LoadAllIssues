@@ -12,6 +12,9 @@ namespace SonarQube.API.Utilities
         readonly static String pattern = "((?<day>\\d+)d)?((?<hour>\\d+)h)?((?<min>\\d+)min)?";
         public static int ConvertToMin(string effortTxt)
         {
+            if(effortTxt==null) {
+                return 0;
+            }
             Regex rgx = new Regex(pattern, RegexOptions.IgnoreCase);
             MatchCollection matches = rgx.Matches(effortTxt);
             int effort=0;

@@ -7,6 +7,6 @@ namespace SonarQube.API.Model
         public int Index { get; set; }
         public string Mode { get; set; }
         public DateTime Date { get; set; }
-        public string parameter { get; set; }
+        public string Parameter { get; set; }
     }
 }

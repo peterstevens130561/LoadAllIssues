@@ -8,7 +8,7 @@ namespace SonarQube.API.Logic
     public class RestParameters : IRestParameters
     {
         private readonly IDictionary<String, String> parameters = new Dictionary<String, String>();
-        public IRestParameters Add(string parameter, string value)
+        public IRestParameters SetParameter(string parameter, string value)
         {
             if (parameters.ContainsKey(parameter))
             {
@@ -18,7 +18,7 @@ namespace SonarQube.API.Logic
             return this;
         }
 
-        public string Get(string key)
+        public string GetParameter(string key)
         {
             return parameters[key];
         }

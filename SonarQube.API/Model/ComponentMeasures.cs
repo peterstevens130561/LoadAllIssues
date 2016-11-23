@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SonarQube.API.Model
 {
-    public class ComponentMeasures
+    public class ComponentMeasures 
     {
         public MeasuresDetail Component{ get; set; }
 

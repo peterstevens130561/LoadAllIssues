@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Newtonsoft.Json;
-using LoadAllIssues.Model;
+using SonarQube.API.Response;
 
 namespace Services.UnitTest
 {

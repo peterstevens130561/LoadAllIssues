@@ -1,7 +1,7 @@
 ﻿namespace SonarQube.API.Logic
 {
-    internal interface ISonarQubeService<T>
+    public interface ISonarQubeService<out T>
     {
-        T Execute();
+         T Execute();
     }
 }

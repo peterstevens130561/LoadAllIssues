@@ -1,7 +1,4 @@
 ﻿using System;
-using LoadAllIssues.Logic;
-using LoadAllIssues.Model;
-using LoadAllIssues.Services;
 
 namespace SonarQube.API.Logic
 {
@@ -19,12 +16,12 @@ namespace SonarQube.API.Logic
 
         internal string GetParameter(string key)
         {
-            return restParameters.Get(key);
+            return restParameters.GetParameter(key);
         }
 
         internal void SetParameter(string key, string value)
         {
-            restParameters.Add(key,value);
+            restParameters.SetParameter(key,value);
         }
 
         internal void SetParameter(string key, int value)

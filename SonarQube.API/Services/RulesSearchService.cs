@@ -1,7 +1,7 @@
 ﻿
 using SonarQube.API.Logic;
 using SonarQube.API.Model;
-
+using SonarQube.API.Response;
 using System.Collections.Generic;
 
 
@@ -9,7 +9,6 @@ namespace SonarQube.API.Services
 {
     public class RulesSearchService  : SonarQubePagedServiceBase<Rule, RulesSearchPage>
     {
-        private readonly SonarQubePagedServiceBase<Rule,RulesSearchPage> restGetService;
 
         public RulesSearchService(RestGetter restGetter) : base(restGetter,"rules/search")
         { 

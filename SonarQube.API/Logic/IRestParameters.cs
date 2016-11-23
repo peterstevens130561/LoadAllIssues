@@ -2,8 +2,8 @@
 {
     public interface IRestParameters
     {
-        string Get(string v);
-        IRestParameters Add(string v, string value);
+        string GetParameter(string v);
+        IRestParameters SetParameter(string v, string value);
         string Build();
     }
 }
