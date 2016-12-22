@@ -1,9 +1,9 @@
 ﻿
 using System.Collections.Generic;
 using System;
-using SonarQube.API.Model;
+using PeterSoft.SonarQubeConnector.Models;
 
-namespace SonarQube.API.Response
+namespace PeterSoft.SonarQubeConnector.API.Response
 {
     public class RulesSearchPageC  : PageBase<Rule >
     {

@@ -54,9 +54,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SonarQube.API\SonarQube.API.csproj">
+    <ProjectReference Include="..\SonarQube.API\SonarQubeConnector.csproj">
       <Project>{9CCD2B62-3DC0-463A-B146-EC5F1FE84AEA}</Project>
-      <Name>SonarQube.API</Name>
+      <Name>SonarQubeConnector</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

@@ -1,0 +1,51 @@
+﻿using System;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using PeterSoft.SonarQubeConnector.Models;
+using PeterSoft.SonarQubeConnector.Services;
+using Moq;
+using System.Collections.Generic;
+
+namespace PeterSoft.SonarQubeConnector.Application
+{
+    [TestClass]
+    public class UnitTest1
+    {
+        [TestMethod]
+        public void NullException()
+        {
+            IList<String> list = null;
+            int i = 0;
+            foreach (var name in list)
+            {
+                i++;
+            }
+        }
+
+        [TestMethod]
+        public void CheckProject()
+        {
+            var qualityGate = new QualityGate();
+            var condition = new Condition();
+            condition.Metric = "blockers";
+            condition.Op = "GT";
+            condition.Warning = "4";
+            condition.Error = "6";
+            condition.Period = 1;
+            qualityGate.Conditions = new List<Condition>();
+            qualityGate.Conditions.Add(condition);
+
+
+            var measures = new ComponentMeasures();
+            var measure = new Measure();
+            measure.Metric = "blockers";
+            measure.Value = "1";
+            measure.Periods = new List<MeasurePeriod>();
+            measure.Periods.Add(new MeasurePeriod(1, "7"));
+
+            measures.Component.Measures.Add(measure);
+            var conditionEvaluator = new ConditionEvaluator(qualityGate);
+            string result = conditionEvaluator.Evaluate(measures.Component.Measures);
+            Assert.AreEqual("Error", result);
+        }
+    }
+}

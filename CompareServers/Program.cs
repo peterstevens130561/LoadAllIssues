@@ -1,12 +1,8 @@
-﻿using SonarQube.API.Logic;
-using SonarQube.API.Model;
-using SonarQube.API.Services;
+﻿using PeterSoft.SonarQubeConnector;
+using PeterSoft.SonarQubeConnector.Models;
+using PeterSoft.SonarQubeConnector.Services;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Net;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CompareServers
 {
@@ -18,14 +14,13 @@ namespace CompareServers
         }
         static void Main(string[] args)
         {
-            var webClient = new WebClient();
-            var restQuerier = new RestGetter(webClient);
-            restQuerier.Connect(args[0], args[2], args[3]);
-            var factory = new SonarQubeServiceFactory(restQuerier);
-            var resourcesService = factory.CreateService<IResourcesService>();
+            var sonarQubeConnector = new SonarQubeConnector();
+
+            var session = sonarQubeConnector.CreateSession();
+            session.Connect(args[0], args[2], args[3]);
+            var resourcesService = session.CreateQueryService<IResourcesService>();
             var production = resourcesService.Execute();
-            restQuerier.Connect(args[1], args[2], args[3]);
-            resourcesService= factory.CreateService<IResourcesService>();
+            resourcesService= session.CreateQueryService<IResourcesService>();
             var staging = resourcesService.Execute();
             // production is the reference, everything that has been recently analysed in there
             // should be analyzed recently in the staging.

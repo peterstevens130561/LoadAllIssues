@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
-using SonarQube.API.Model;
+using PeterSoft.SonarQubeConnector.Models;
 
-namespace SonarQube.API.Response
+namespace PeterSoft.SonarQubeConnector.API.Response
 {
     public abstract class PageBase<T> : IPage<T>
     {

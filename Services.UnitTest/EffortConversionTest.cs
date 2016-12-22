@@ -1,5 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using SonarQube.API.Utilities;
+using PeterSoft.SonarQubeConnector.API.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;

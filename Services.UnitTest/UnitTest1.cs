@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
-using SonarQube.API.Model;
+using PeterSoft.SonarQubeConnector.Models;
 using Newtonsoft.Json;
 
 namespace Services.UnitTest

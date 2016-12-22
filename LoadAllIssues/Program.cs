@@ -1,15 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using Newtonsoft.Json;
 using System.Text;
-using System.Threading.Tasks;
 using System.IO;
-using SonarQube.API.Utilities;
-using SonarQube.API.Logic;
-using SonarQube.API.Services;
-using SonarQube.API.Model;
+using PeterSoft.SonarQubeConnector.API.Utilities;
+using PeterSoft.SonarQubeConnector.Services;
+using PeterSoft.SonarQubeConnector.Models;
+using PeterSoft.SonarQubeConnector;
 
 namespace LoadAllIssues
 {
@@ -21,15 +17,16 @@ namespace LoadAllIssues
         }
         static void Main(string[] args)
         {
+            var connector = new SonarQubeConnector();
+            var session = connector.CreateSession();
+            session.Connect(args[0], args[1], args[2]);
 
-            var webClient = new WebClient();
-            var restQuerier = new RestGetter(webClient);
-            restQuerier.Connect(args[1], args[2], args[3]);
-            var serviceFactory = new SonarQubeServiceFactory(restQuerier);
-            var projectsIndexService = serviceFactory.CreateService<IProjectsIndexService>();
+            var projectsIndexService = session.CreateQueryService<IProjectsIndexService>();
             var projects = projectsIndexService.Execute();
             var listedRules = new List<String>();
-            var rules = new RulesSearchService(restQuerier).SetRepositories("fxcop,csharpsquid").Execute();
+            var rulesSearchService = session.CreateQueryService<IRulesSearchService>();
+            rulesSearchService.SetRepositories("fxcop,csharpsquid");
+            var rules = rulesSearchService.Execute();
             StringBuilder sb = new StringBuilder(4096);
             foreach(Rule rule in rules)
             {
@@ -40,11 +37,13 @@ namespace LoadAllIssues
             sb.Clear();
             foreach (Project project in projects)
             {
-                var issues= new IssuesSearchService(restQuerier).SetStatuses("OPEN,REOPENED").SetProjectKeys(project.K).Execute();
+                var issuesSearchService = session.CreateQueryService<IIssuesSearchService>();
+                var issues=issuesSearchService.SetStatuses("OPEN,REOPENED").SetProjectKeys(project.K).Execute();
                 foreach (var issue in issues)
                 {
                     if (!listedRules.Contains(issue.Rule)) {
-                        var rule = new RulesShowService(restQuerier).SetKey(issue.Rule).Execute().Rule;
+                        var rulesShowService = session.CreateQueryService<IRulesShowService>();
+                        var rule = rulesShowService.SetKey(issue.Rule).Execute().Rule;
 
                         listedRules.Add(issue.Rule);
                     sb.AppendLine(project.K + "|" + issue.Rule + "|" + issue.Severity + "|" + rule.Name + "|" + EffortConversion.ConvertToMin(issue.Effort));

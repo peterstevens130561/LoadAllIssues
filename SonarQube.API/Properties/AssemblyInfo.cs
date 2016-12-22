@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("SonarQube.API")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("SonarQubeConnector")]
+[assembly: AssemblyDescription("A simple REST connector to SonarQube")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Baker Hughes Incorporated")]
-[assembly: AssemblyProduct("SonarQube.API")]
+[assembly: AssemblyProduct("SonarQubeConnector")]
 [assembly: AssemblyCopyright("Copyright © Baker Hughes Incorporated 2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

@@ -77,14 +77,16 @@
   <ItemGroup>
     <Compile Include="EffortConversionTest.cs" />
     <Compile Include="UnitTest1.cs" />
+    <Compile Include="ConditionTest.cs" />
+    <Compile Include="QualityGateTest.cs" />
     <Compile Include="UnitTest_Rules.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SonarQube.API\SonarQube.API.csproj">
+    <ProjectReference Include="..\SonarQube.API\SonarQubeConnector.csproj">
       <Project>{9ccd2b62-3dc0-463a-b146-ec5f1fe84aea}</Project>
-      <Name>SonarQube.API</Name>
+      <Name>SonarQubeConnector</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>

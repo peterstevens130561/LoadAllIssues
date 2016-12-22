@@ -1,8 +1,8 @@
 ﻿
-using SonarQube.API.Model;
+using PeterSoft.SonarQubeConnector.Models;
 using System.Collections.Generic;
 
-namespace SonarQube.API.Response
+namespace PeterSoft.SonarQubeConnector.API.Response
 {
 
     public interface IPage<T>
