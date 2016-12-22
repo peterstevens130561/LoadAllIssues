@@ -6,7 +6,7 @@ using System;
 
 namespace PeterSoft.SonarQubeConnector.Services
 {
-     internal class ComponentMeasuresService :  SonarQubeServiceBase<ComponentMeasures> , IComponentMeasuresService
+     internal class ComponentMeasuresService :  ServiceBase<ComponentMeasures> , IComponentMeasuresService
     {
 
         public ComponentMeasuresService(RestClient restGetter, IRestParameters restParameters) : base(restGetter, "measures/component")

@@ -3,12 +3,12 @@ using System;
 
 namespace PeterSoft.SonarQubeConnector.Services
 {
-    internal class SonarQubeServiceBase<T> : ISonarQubeService<T>
+    internal class ServiceBase<T> : IService<T>
     {
         protected readonly IRestParameters restParameters = new RestParameters();
         private readonly RestClient restQuerier;
         private string path;
-        public SonarQubeServiceBase(RestClient restQuerier, string path)
+        public ServiceBase(RestClient restQuerier, string path)
         {
             this.restQuerier = restQuerier;
             this.path = path;

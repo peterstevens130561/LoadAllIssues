@@ -1,9 +1,6 @@
 ﻿
 using System.Collections.Generic;
-using System;
-using PeterSoft.SonarQubeConnector.API.Response;
 using PeterSoft.SonarQubeConnector.API.Logic;
-using PeterSoft.SonarQubeConnector.Services;
 
 namespace PeterSoft.SonarQubeConnector.Services
 {
@@ -17,12 +14,12 @@ namespace PeterSoft.SonarQubeConnector.Services
     /// </summary>
     /// <typeparam name="T"></typeparam>
     /// <typeparam name="V">response type</typeparam>
-    internal class SonarQubePagedServiceBase<T,V> :  ISonarQubePagedServiceBase<T,V> where V : PageBase<T>
+    internal class PagedServiceBase<T,V> :  IPagedService<T,V> where V : Page<T>
     {
-        private readonly SonarQubeServiceBase<V> restGetService;
-        public SonarQubePagedServiceBase(RestClient restGetter, string path) 
+        private readonly ServiceBase<V> restGetService;
+        public PagedServiceBase(RestClient restGetter, string path) 
         {
-            restGetService = new SonarQubeServiceBase<V>(restGetter, path);
+            restGetService = new ServiceBase<V>(restGetter, path);
         }
 
         public IList<T> Execute()

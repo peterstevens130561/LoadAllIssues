@@ -1,13 +1,12 @@
 ﻿
 using PeterSoft.SonarQubeConnector.API.Logic;
 using PeterSoft.SonarQubeConnector.Models;
-using PeterSoft.SonarQubeConnector.API.Response;
 using System.Collections.Generic;
 
 
 namespace PeterSoft.SonarQubeConnector.Services
 {
-    internal class RulesSearchService  : SonarQubePagedServiceBase<Rule, RulesSearchPage>, IRulesSearchService
+    internal class RulesSearchService  : PagedServiceBase<Rule, RulesSearchPage>, IRulesSearchService
     {
 
         public RulesSearchService(RestClient restGetter) : base(restGetter,"rules/search")
@@ -22,7 +21,7 @@ namespace PeterSoft.SonarQubeConnector.Services
 
     }
 
-    public class RulesSearchPage : PageBase<Rule>
+    public class RulesSearchPage : Page<Rule>
     {
         public override IList<Rule> Items
         {

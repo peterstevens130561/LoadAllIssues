@@ -1,13 +1,12 @@
 ﻿
 using PeterSoft.SonarQubeConnector.API.Logic;
 using PeterSoft.SonarQubeConnector.Models;
-using PeterSoft.SonarQubeConnector.API.Response;
 using System.Collections.Generic;
 
 
 namespace PeterSoft.SonarQubeConnector.Services
 {
-    internal class IssuesSearchService : SonarQubePagedServiceBase<Issue, IssuesSearchPage>, IIssuesSearchService
+    internal class IssuesSearchService : PagedServiceBase<Issue, IssuesSearchPage>, IIssuesSearchService
 
     {
 
@@ -28,7 +27,7 @@ namespace PeterSoft.SonarQubeConnector.Services
 
     }
 
-    public class IssuesSearchPage : PageBase<Issue>
+    public class IssuesSearchPage : Page<Issue>
     {
 
         public IList<Issue> Issues { get; set; }

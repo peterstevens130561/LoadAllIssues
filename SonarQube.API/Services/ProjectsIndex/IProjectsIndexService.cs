@@ -3,10 +3,8 @@ using System.Collections.Generic;
 
 namespace PeterSoft.SonarQubeConnector.Services
 {
-    public interface IProjectsIndexService
+    public interface IProjectsIndexService : IService<IList<Project>>
     {
         IProjectsIndexService SetKey(string projectKey);
-
-        IList<Project> Execute();
     }
 }

@@ -86,10 +86,9 @@
     <Compile Include="Connector\API\ISession.cs" />
     <Compile Include="Commands\ProjectsCreateCommand.cs" />
     <Compile Include="Services\MetricsSearchQueryService.cs" />
-    <Compile Include="Client\IRestGetObject.cs" />
     <Compile Include="Client\IRestClient.cs" />
     <Compile Include="Client\IRestParameters.cs" />
-    <Compile Include="Client\SonarQubeServiceBase.cs" />
+    <Compile Include="Client\ServiceBase.cs" />
     <Compile Include="Client\RestClient.cs" />
     <Compile Include="Client\RestParameters.cs" />
     <Compile Include="Models\ComponentMeasures.cs" />
@@ -108,21 +107,13 @@
     <Compile Include="Models\TextRange.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Response\IPage.cs" />
-    <Compile Include="Response\PageBase.cs" />
-    <Compile Include="Response\ProjectsIndex.cs" />
-    <Compile Include="Response\RulesSearch.cs" />
-    <Compile Include="Response\RulesShow.cs" />
+    <Compile Include="Response\Page.cs" />
+    <Compile Include="Models\RulesShow.cs" />
     <Compile Include="Connector\ServiceInfrastructure\IServiceFactory.cs" />
-    <Compile Include="ServiceBus\ISonarQubePagedServiceBase.cs" />
+    <Compile Include="ServiceBus\IPagedService.cs" />
     <Compile Include="Services\ComponentMeasures\ComponentMeasuresService.cs" />
-    <Compile Include="Services\IQueryService.cs" />
     <Compile Include="Services\ComponentMeasures\IComponentMeasureService.cs" />
-    <Compile Include="Services\ProjectsIndex\IProjectsIndexParameters.cs" />
-    <Compile Include="Services\ProjectsIndex\ProjectsIndexParameters.cs" />
-    <Compile Include="Services\Resources\IResourcesParameters.cs" />
     <Compile Include="Services\Resources\IResourcesService.cs" />
-    <Compile Include="Services\Resources\ResourcesParameters.cs" />
-    <Compile Include="ServiceBus\SonarQubeGetService.cs" />
     <Compile Include="Services\IssuesSearch\IIssuesSearchService.cs" />
     <Compile Include="Services\ProjectsIndex\IProjectsIndexService.cs" />
     <Compile Include="Services\RuleSearch\IRulesSearchService.cs" />
@@ -132,9 +123,10 @@
     <Compile Include="Services\Resources\ResourcesService.cs" />
     <Compile Include="Services\RuleShow\RuleShowService.cs" />
     <Compile Include="Services\RuleSearch\RulesSearchService.cs" />
-    <Compile Include="ServiceBus\SonarQubePagedServiceBase.cs" />
+    <Compile Include="ServiceBus\PagedServiceBase.cs" />
     <Compile Include="Connector\ServiceInfrastructure\ServiceFactory.cs" />
     <Compile Include="Connector\Session.cs" />
+    <Compile Include="Services\IService.cs" />
     <Compile Include="Utilities\EffortConversion.cs" />
   </ItemGroup>
   <ItemGroup>

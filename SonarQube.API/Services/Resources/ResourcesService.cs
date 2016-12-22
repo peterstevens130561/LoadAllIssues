@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace PeterSoft.SonarQubeConnector.Services
 {
-    internal class ResourcesService : SonarQubeServiceBase<IList<Resource>>, IResourcesService
+    internal class ResourcesService : ServiceBase<IList<Resource>>, IResourcesService
     {
         public ResourcesService(RestClient restQuerier,IRestParameters parameters) : base(restQuerier, "resources")
         {

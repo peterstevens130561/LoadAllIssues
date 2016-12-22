@@ -2,7 +2,7 @@
 
 namespace PeterSoft.SonarQubeConnector.Services
 {
-    public interface IComponentMeasuresService 
+    public interface IComponentMeasuresService : IService<ComponentMeasures>
     {
         IComponentMeasuresService SetComponentId(string value);
 
@@ -10,6 +10,5 @@ namespace PeterSoft.SonarQubeConnector.Services
 
         IComponentMeasuresService SetMetricKeys(string metricKeys);
 
-        ComponentMeasures Execute();
     }
 }

@@ -1,10 +1,6 @@
 ﻿
-using PeterSoft.SonarQubeConnector.Infrastructure.Commands;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using PeterSoft.SonarQubeConnector.API.Logic;
 
 namespace PeterSoft.SonarQubeConnector.Infrastructure.Commands{

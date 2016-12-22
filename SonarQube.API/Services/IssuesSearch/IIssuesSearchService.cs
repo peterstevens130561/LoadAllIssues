@@ -3,10 +3,9 @@ using System.Collections.Generic;
 
 namespace PeterSoft.SonarQubeConnector.Services
 {
-    public interface IIssuesSearchService
+    public interface IIssuesSearchService : IService<IList<Issue>>
     {
         IIssuesSearchService SetProjectKeys(string projectKeys);
         IIssuesSearchService SetStatuses(string statuses);
-        IList<Issue> Execute();
     }
 }

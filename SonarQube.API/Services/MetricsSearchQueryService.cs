@@ -5,14 +5,14 @@ using PeterSoft.SonarQubeConnector.API.Logic;
 
 namespace PeterSoft.SonarQubeConnector.Services
 {
-    internal class MetricsSearchQueryService : SonarQubeServiceBase<IList<Metric>>, IMetricsSearchQueryService
+    internal class MetricsSearchService : ServiceBase<IList<Metric>>, IMetricsSearchService
 
     {
-        public MetricsSearchQueryService(RestClient restGetter, IRestParameters parameters) : base(restGetter, "metrics/search")
+        public MetricsSearchService(RestClient restGetter, IRestParameters parameters) : base(restGetter, "metrics/search")
         {
         }
 
-        public IMetricsSearchQueryService SetIsCustom(bool value)
+        public IMetricsSearchService SetIsCustom(bool value)
         {
             SetParameter("isCustom", value);
             return this;

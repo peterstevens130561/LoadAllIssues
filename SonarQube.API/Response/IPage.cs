@@ -2,7 +2,7 @@
 using PeterSoft.SonarQubeConnector.Models;
 using System.Collections.Generic;
 
-namespace PeterSoft.SonarQubeConnector.API.Response
+namespace PeterSoft.SonarQubeConnector.Services
 {
 
     public interface IPage<T>

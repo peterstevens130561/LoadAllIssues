@@ -5,11 +5,8 @@ using System.Collections.Generic;
 
 namespace PeterSoft.SonarQubeConnector.Services
 {
-    public interface IMetricsSearchQueryService
+    public interface IMetricsSearchService : IService<IList<Metric>>
     {
-        IMetricsSearchQueryService SetIsCustom(Boolean value);
-
-        IList<Metric> Execute();
-
+        IMetricsSearchService SetIsCustom(Boolean value);
     }
 }

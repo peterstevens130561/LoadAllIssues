@@ -3,7 +3,7 @@ using PeterSoft.SonarQubeConnector.Models;
 using System;
 using System.Collections.Generic;
 
-namespace PeterSoft.SonarQubeConnector.API.Response
+namespace PeterSoft.SonarQubeConnector.Models
 {
     public class RulesShow
     {

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace PeterSoft.SonarQubeConnector.Services
 {
-    public interface IRulesSearchService : ISonarQubePagedServiceBase<Rule, RulesSearchPage>
+    public interface IRulesSearchService : IPagedService<Rule, RulesSearchPage>
     {
         IRulesSearchService SetRepositories(string repositories);
 

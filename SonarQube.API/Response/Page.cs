@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using PeterSoft.SonarQubeConnector.Models;
 
-namespace PeterSoft.SonarQubeConnector.API.Response
+namespace PeterSoft.SonarQubeConnector.Services
 {
-    public abstract class PageBase<T> : IPage<T>
+    public abstract class Page<T> : IPage<T>
     {
         public int Total { get; set; }
         public int P { get; set; }
