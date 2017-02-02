@@ -18,9 +18,9 @@ namespace CompareServers
 
             var session = sonarQubeConnector.CreateSession();
             session.Connect(args[0], args[2], args[3]);
-            var resourcesService = session.CreateQueryService<IResourcesService>();
+            var resourcesService = session.CreateService<IResourcesService>();
             var production = resourcesService.Execute();
-            resourcesService= session.CreateQueryService<IResourcesService>();
+            resourcesService= session.CreateService<IResourcesService>();
             var staging = resourcesService.Execute();
             // production is the reference, everything that has been recently analysed in there
             // should be analyzed recently in the staging.
@@ -33,10 +33,10 @@ namespace CompareServers
             {
                 var inStaging = staging.FirstOrDefault(x => x.Key.Equals(productionResource.Key));
                 Console.Write(productionResource.Lname);
-                Console.WriteLine(" " + Status(productionResource, inStaging));
+                Console.WriteLine(@" " + Status(productionResource, inStaging));
 
             }
-            Console.WriteLine("Done");
+            Console.WriteLine(@"Done");
 
 
         }

@@ -1,43 +1,24 @@
-﻿using PeterSoft.SonarQubeConnector.API.Logic;
+﻿using Newtonsoft.Json;
+using PeterSoft.SonarQubeConnector.API.Logic;
+using PeterSoft.SonarQubeConnector.Client;
 using System;
 
 namespace PeterSoft.SonarQubeConnector.Services
 {
-    internal class ServiceBase<T> : IService<T>
+    internal class ServiceBase<T> : ParametersBase, IExecuteService<T>
     {
-        protected readonly IRestParameters restParameters = new RestParameters();
-        private readonly RestClient restQuerier;
-        private string path;
-        public ServiceBase(RestClient restQuerier, string path)
+        private readonly IRestClient restClient;
+        private readonly string path;
+        public ServiceBase(IRestClient restClient, IRestParameters restParameters, string path): base(restParameters)
         {
-            this.restQuerier = restQuerier;
+            this.restClient = restClient;
             this.path = path;
         }
 
-
-        internal string GetParameter(string key)
+        public virtual T Execute()
         {
-            return restParameters.GetParameter(key);
-        }
-
-        internal void SetParameter(string key, string value)
-        {
-            restParameters.SetParameter(key,value);
-        }
-
-        internal void SetParameter(string key, int value)
-        {
-            SetParameter(key, value.ToString());
-        }
-
-        internal void SetParameter(string key, bool value)
-        {
-            SetParameter(key, value.ToString());
-        }
-
-        public T Execute()
-        {
-            return restQuerier.SetPath(path).Execute<T>(restParameters);
+            string result= restClient.SetPath(path).Get(base.Parameters());
+            return JsonConvert.DeserializeObject<T>(result);
         }
 
     }

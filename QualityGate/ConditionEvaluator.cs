@@ -31,7 +31,7 @@ namespace PeterSoft.SonarQubeConnector.Application
                     }
                 }
             }
-            return "Warning";
+            return @"Warning";
         }
     }
 }

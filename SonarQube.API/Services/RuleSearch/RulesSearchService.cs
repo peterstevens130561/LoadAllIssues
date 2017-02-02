@@ -2,15 +2,21 @@
 using PeterSoft.SonarQubeConnector.API.Logic;
 using PeterSoft.SonarQubeConnector.Models;
 using System.Collections.Generic;
-
+using System;
 
 namespace PeterSoft.SonarQubeConnector.Services
 {
     internal class RulesSearchService  : PagedServiceBase<Rule, RulesSearchPage>, IRulesSearchService
     {
 
-        public RulesSearchService(RestClient restGetter) : base(restGetter,"rules/search")
+        public RulesSearchService(RestClient restGetter,RestParameters restParameters) : base(restGetter,restParameters,"rules/search")
         { 
+        }
+
+        public IRulesSearchService SetProfileKey(string profileKey)
+        {
+            SetParameter("qprofile", profileKey);
+            return this;
         }
 
         public IRulesSearchService SetRepositories(string repositories)

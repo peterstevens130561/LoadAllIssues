@@ -24,10 +24,10 @@ namespace PeterSoft.SonarQubeConnector.Infrastructure.Commands{
         {
             if (!handlerMap.ContainsKey(typeof(TCommand)))
             {
-                throw new ArgumentException("unsupported type");
+                throw new ArgumentException(@"unsupported type");
             }
             var handlerType = handlerMap[typeof(TCommand)];
-            var handler = (ICommandHandler<TCommand>)Activator.CreateInstance(handlerType);
+            var handler = (ICommandHandler<TCommand>)Activator.CreateInstance(handlerType,restGetter);
             handler.Execute(command);
         }
 

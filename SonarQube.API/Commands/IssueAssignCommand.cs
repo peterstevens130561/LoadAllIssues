@@ -5,28 +5,27 @@ using System.Text;
 using System.Threading.Tasks;
 using PeterSoft.SonarQubeConnector.API.Logic;
 using PeterSoft.SonarQubeConnector.Commands;
+using PeterSoft.SonarQubeConnector.Client;
 
 namespace PeterSoft.SonarQubeConnector.Commands
 {
-    public class IssueAssignCommand : IIssueAssignCommand
+    public class IssueAssignCommand : ParametersBase,IIssueAssignCommand
     {
-        private readonly IRestParameters restParameters = new RestParameters();
+        public IssueAssignCommand(IRestParameters restParameters) : base(restParameters)
+        {
+        }
 
         public IIssueAssignCommand SetIssue(string issue) 
         {
-            restParameters.SetParameter("issue", issue);
+            SetParameter(@"issue", issue);
             return this;
         }
 
         public IIssueAssignCommand SetAssignee(string assignee)
         {
-            restParameters.SetParameter("asignee", assignee);
+            SetParameter(@"asignee", assignee);
             return this;
         }
 
-        internal IRestParameters Parameters()
-        {
-            return restParameters;
-        }
     }
 }

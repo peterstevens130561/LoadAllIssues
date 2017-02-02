@@ -9,7 +9,7 @@ namespace PeterSoft.SonarQubeConnector.Services
     {
 
 
-        public RulesShowService(RestClient restGetter): base(restGetter, "rules/show")
+        public RulesShowService(RestClient restGetter,RestParameters restParameters): base(restGetter, restParameters, "rules/show")
         { 
         }
 

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<RuleSet Name="SonarQube - SonarQubeTools CleanSweep" Description="This rule set was automatically generated from SonarQube.&#xD;&#xA;http://bhidftweb01:9005/profiles/show?key=cs-cleansweep-58079" ToolsVersion="14.0">
+<RuleSet Name="SonarQube - SonarQubeTools CleanSweep" Description="This rule set was automatically generated from SonarQube.&#xD;&#xA;http://dftweb02:9000/profiles/show?key=cs-cleansweep-58079" ToolsVersion="14.0">
   <Rules AnalyzerId="SonarAnalyzer.CSharp" RuleNamespace="SonarAnalyzer.CSharp">
     <Rule Id="S100" Action="Warning" />
     <Rule Id="S1006" Action="Warning" />

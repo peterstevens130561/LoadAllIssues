@@ -18,18 +18,18 @@ namespace ExtractProjectIssues
             var connector = new SonarQubeConnector();
             var session = connector.CreateSession();
             session.Connect(args[0], args[1], args[2]);
-            var projectsService = session.CreateQueryService<IProjectsIndexService>();
+            var projectsService = session.CreateService<IProjectsIndexService>();
             var projects = projectsService.Execute();
-            var issuesSearchService = session.CreateQueryService<IIssuesSearchService>();
-            issuesSearchService.SetStatuses("OPEN");
-            Console.WriteLine("Project|Message|Component|Line|Rule|Severity|");
+            var issuesSearchService = session.CreateService<IIssuesSearchService>();
+            issuesSearchService.SetStatuses(@"OPEN");
+            Console.WriteLine(@"Project|Message|Component|Line|Rule|Severity|");
             foreach (var project in projects)
             {
                 issuesSearchService.SetProjectKeys(project.K);
                 var issues = issuesSearchService.Execute();
                 foreach (var issue in issues)
                 {
-                    Console.WriteLine(project.Nm + "|" + issue.Message + "|" + issue.Component + "|" + issue.Line + "|" + issue.Rule + "|" + issue.Severity);
+                    Console.WriteLine(project.Nm + @"|" + issue.Message + @"|" + issue.Component + @"|" + issue.Line + @"|" + issue.Rule + @"|" + issue.Severity);
                 }
             }
 

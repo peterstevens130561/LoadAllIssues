@@ -1,22 +1,20 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Net;
+using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PeterSoft.SonarQubeConnector.API.Logic { 
+namespace PeterSoft.SonarQubeConnector.API.Logic {
     internal class RestClient : IRestClient
     {
         private string url;
         private string path;
-        private string result;
-        private readonly WebClient webClient;
-        public RestClient(WebClient webClient)
-        {
-            this.webClient = webClient;
-        }
+        private string username;
+        private string password;
+        internal String Result { get; set; }
 
         public IRestClient SetPath(string path)
         {
@@ -24,26 +22,22 @@ namespace PeterSoft.SonarQubeConnector.API.Logic {
             return this;
         }
 
-        public void Connect(string url, string  username, string password)
+        public void Connect(string url, string username, string password)
         {
             this.url = url;
-            webClient.UseDefaultCredentials = false;
-            webClient.Credentials = new NetworkCredential(username, password);
+            this.username = username;
+            this.password = password;
         }
 
-        public T Execute<T>(IRestParameters parameters) 
+
+        public string Get(IRestParameters parameters)
         {
-                String query = url + "/api/" + path + "?format=json" + parameters.Build();
-                try
-                {
-                    result = webClient.DownloadString(new Uri(query));
-                    return JsonConvert.DeserializeObject<T>(result);
-                } catch (WebException e)
-                {
-                    Console.WriteLine(e.Message);
-                    throw;
-                }
-       
+            string getUrl = url + @"/api/" + path;
+            var values = parameters.Values();
+            Task task = GetTask(getUrl, values);
+            task.Wait();
+            return Result;
+
         }
 
         public void Connect(ICredentials credentials)
@@ -53,18 +47,59 @@ namespace PeterSoft.SonarQubeConnector.API.Logic {
 
         public void Post(IRestParameters parameters)
         {
-            string query = url + "/api/" + path  + parameters.Build();
-            byte[]  resultBytes = webClient.UploadData(url, "POST", System.Text.Encoding.ASCII.GetBytes(query));
-            result= System.Text.Encoding.ASCII.GetString(resultBytes);
-            if(!"OK".Equals(result))
+            string posturl = url + @"/api/" + path;
+            var values = parameters.Values();
+            Task task = PostTask(posturl, values);
+            task.Wait();
+        }
+
+        public async Task PostTask(string url, IDictionary<String, String> values)
+        {
+
+            using (var client = new HttpClient())
             {
-                throw new ArgumentOutOfRangeException(result);
+                var content = new FormUrlEncodedContent(values);
+                string header = username + @":" + password;
+                var credentials = Encoding.ASCII.GetBytes(header);
+                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(@"Basic", Convert.ToBase64String(credentials));
+                var response = await client.PostAsync(url, content);
+                var statusCode = response.StatusCode;
+                if (statusCode != HttpStatusCode.OK)
+                {
+                    throw new WebException(@"Post returned " + statusCode);
+                }
+                var responseString = response.Content.ReadAsStringAsync();
+                responseString.Wait();
+                Result = responseString.Result;
             }
         }
 
-        public T  GetPostResult<T>()
+        public async Task GetTask(string url, IDictionary<String, String> values)
         {
-            return JsonConvert.DeserializeObject<T>(result);
+
+            using (var client = new HttpClient())
+            {
+                var content = new FormUrlEncodedContent(values);
+                string query = content.ReadAsStringAsync().Result;
+                string header = username + @":" + password;
+                var credentials = Encoding.ASCII.GetBytes(header);
+                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(@"Basic", Convert.ToBase64String(credentials));
+                var response = await client.GetAsync(url + "?" + query);
+                var statusCode = response.StatusCode;
+                if (statusCode != HttpStatusCode.OK)
+                {
+                    throw new WebException(@"Get returned " + statusCode);
+                }
+                
+                var responseString = response.Content.ReadAsStringAsync();
+                responseString.Wait();
+                Result = responseString.Result;
+            }
+        }
+
+        public T GetPostResult<T>()
+        {
+            return JsonConvert.DeserializeObject<T>(Result);
         }
     }
 }

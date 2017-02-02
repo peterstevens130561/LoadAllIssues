@@ -8,6 +8,8 @@ using PeterSoft.SonarQubeConnector.Infrastructure.Commands;
 using PeterSoft.SonarQubeConnector.Commands;
 using PeterSoft.SonarQubeConnector.CommandHandlers;
 using PeterSoft.SonarQubeConnector.Infrastructure.Services;
+using PeterSoft.SonarQubeConnector.Handlers;
+using PeterSoft.SonarQubeConnector.Services.Issues;
 
 namespace PeterSoft.SonarQubeConnector
 {
@@ -27,9 +29,8 @@ namespace PeterSoft.SonarQubeConnector
 
         public SonarQubeConnector()
         {
-            //TODO: we should not hold on to the resource
-            webClient = new WebClient();
-            restGetter = new RestClient(webClient);
+
+            restGetter = new RestClient();
             serviceFactory = new ServiceFactory(restGetter);
             RegisterServices();
             commandFactory = new CommandFactory(restGetter);
@@ -41,6 +42,7 @@ namespace PeterSoft.SonarQubeConnector
         private void RegisterCommandHandlers()
         {
             commandBus.Register<IssueAssignCommand, IssueAssignCommandHandler>();
+            commandBus.Register<IActivateRuleInQualityProfileCommand, ActivateRuleInQualityProfileCommandHandler>();
             commandBus.Register<IDevCockpitRunCommand, DevCockpitRunCommandHandler>();
         }
 
@@ -48,6 +50,7 @@ namespace PeterSoft.SonarQubeConnector
         {
             commandFactory.Register<IIssueAssignCommand, IssueAssignCommand>();
             commandFactory.Register<IDevCockpitRunCommand, DevCockpitRunCommand>();
+            commandFactory.Register<IActivateRuleInQualityProfileCommand, ActivateRuleInQualityProfileCommand>();
         }
 
         public ISession CreateSession()
@@ -60,8 +63,15 @@ namespace PeterSoft.SonarQubeConnector
             serviceFactory.Register<IComponentMeasuresService, ComponentMeasuresService>()
             .Register<IProjectsIndexService, ProjectsIndexService>()
             .Register<IRulesShowService, RulesShowService>()
+            .Register<IRulesSearchService,RulesSearchService>()
             .Register<IResourcesService, ResourcesService>()
-            .Register<IIssuesSearchService, IssuesSearchService>();
+            .Register<IIssuesSearchService, IssuesSearchService>()
+            .Register<IQualityProfilesSearchService,QualityProfilesSearchService>()
+            .Register<IIssuesAuthorsService,IssuesAuthorsService>()
+            .Register<IIssuesTagsService,IssuesTagsService>()
+            .Register<IIssuesTransitionsService,IssuesTransitionsService>()
+            .Register<IIssuesChangelogService, IssuesChangelogService>()
+            .Register<ISourcesScmService,SourcesScmService>();
         }
 
     }

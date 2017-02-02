@@ -3,8 +3,12 @@ using PeterSoft.SonarQubeConnector.Models;
 
 namespace PeterSoft.SonarQubeConnector.Services
 {
-    public abstract class Page<T> : IPage<T>
-    {
+    /// <summary>
+    /// Used for paged responses
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
+    public abstract class Page<T> : IPage<T> { 
+    
         public int Total { get; set; }
         public int P { get; set; }
         public int Ps { get; set; }

@@ -17,6 +17,7 @@ namespace Dashboard
         }
         static void Main(string[] args)
         {
+            int a = 4;
             var connector = new SonarQubeConnector();
             var session = connector.CreateSession();
             session.Connect(args[0], args[1], args[2]);

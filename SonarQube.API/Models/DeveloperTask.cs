@@ -8,7 +8,7 @@ namespace PeterSoft.SonarQubeConnector.Models
 {
     public class DeveloperTask
     {
-        string TaskId { get; set; }
-        string DeveloperId { get; set; }
+        public string TaskId { get; set; }
+        public string DeveloperId { get; set; }
     }
 }

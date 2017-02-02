@@ -11,7 +11,7 @@ namespace PeterSoft.SonarQubeConnector.Services
 {
     internal class ResourcesService : ServiceBase<IList<Resource>>, IResourcesService
     {
-        public ResourcesService(RestClient restQuerier,IRestParameters parameters) : base(restQuerier, "resources")
+        public ResourcesService(RestClient restQuerier,IRestParameters parameters) : base(restQuerier, parameters, "resources")
         {
 
         }

@@ -64,6 +64,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Client\IParameters.cs" />
+    <Compile Include="Client\ParametersBase.cs" />
+    <Compile Include="Commands\ActivateRuleInQualityProfileCommand.cs" />
+    <Compile Include="Commands\IActivateRuleInQualityProfileCommand.cs" />
     <Compile Include="Commands\IDevCockpitRunCommand.cs" />
     <Compile Include="Connector\Credentials.cs" />
     <Compile Include="Client\ICredentials.cs" />
@@ -76,6 +80,13 @@
     <Compile Include="Connector\CommandInfrastructure\ICommandFactory.cs" />
     <Compile Include="Connector\CommandInfrastructure\ICommandHandler.cs" />
     <Compile Include="Commands\IProjectsCreateCommand.cs" />
+    <Compile Include="Handlers\ActivateRuleInQualityProfileCommandHandler.cs" />
+    <Compile Include="Models\Author.cs" />
+    <Compile Include="Models\Changelog.cs" />
+    <Compile Include="Models\Commit.cs" />
+    <Compile Include="Models\Diff.cs" />
+    <Compile Include="Models\Profile.cs" />
+    <Compile Include="Models\ProfilesResponse.cs" />
     <Compile Include="Services\IMetricsSearch.cs" />
     <Compile Include="Commands\DevCockpitRunCommand.cs" />
     <Compile Include="Handlers\DevCockpitRunCommandHandler.cs" />
@@ -85,6 +96,15 @@
     <Compile Include="Connector\SonarQubeConnector.cs" />
     <Compile Include="Connector\API\ISession.cs" />
     <Compile Include="Commands\ProjectsCreateCommand.cs" />
+    <Compile Include="Services\IService.cs" />
+    <Compile Include="Services\Issues\Authors\IIssuesAuthorsService.cs" />
+    <Compile Include="Services\Issues\Authors\IssuesAuthorsService.cs" />
+    <Compile Include="Services\Issues\ChangeLog\IIssuesChangeLogService.cs" />
+    <Compile Include="Services\Issues\ChangeLog\IssuesChangelogService.cs" />
+    <Compile Include="Services\Issues\Tags\IIssuesTagsService.cs" />
+    <Compile Include="Services\Issues\Tags\IssuesTagsService.cs" />
+    <Compile Include="Services\Issues\Transitions\IIssuesTransitionsService.cs" />
+    <Compile Include="Services\Issues\Transitions\IssuesTransitionsService.cs" />
     <Compile Include="Services\MetricsSearchQueryService.cs" />
     <Compile Include="Client\IRestClient.cs" />
     <Compile Include="Client\IRestParameters.cs" />
@@ -113,12 +133,14 @@
     <Compile Include="ServiceBus\IPagedService.cs" />
     <Compile Include="Services\ComponentMeasures\ComponentMeasuresService.cs" />
     <Compile Include="Services\ComponentMeasures\IComponentMeasureService.cs" />
+    <Compile Include="Services\QualityProfilesSearch\IQualityProfilesSearchService.cs" />
+    <Compile Include="Services\QualityProfilesSearch\QualityProfilesSearchService.cs" />
     <Compile Include="Services\Resources\IResourcesService.cs" />
-    <Compile Include="Services\IssuesSearch\IIssuesSearchService.cs" />
+    <Compile Include="Services\Issues\Search\IIssuesSearchService.cs" />
     <Compile Include="Services\ProjectsIndex\IProjectsIndexService.cs" />
     <Compile Include="Services\RuleSearch\IRulesSearchService.cs" />
     <Compile Include="Services\RuleShow\IRulesShowService.cs" />
-    <Compile Include="Services\IssuesSearch\IssuesSearchService.cs" />
+    <Compile Include="Services\Issues\Search\IssuesSearchService.cs" />
     <Compile Include="Services\ProjectsIndex\ProjectsIndexService.cs" />
     <Compile Include="Services\Resources\ResourcesService.cs" />
     <Compile Include="Services\RuleShow\RuleShowService.cs" />
@@ -126,13 +148,17 @@
     <Compile Include="ServiceBus\PagedServiceBase.cs" />
     <Compile Include="Connector\ServiceInfrastructure\ServiceFactory.cs" />
     <Compile Include="Connector\Session.cs" />
-    <Compile Include="Services\IService.cs" />
+    <Compile Include="Services\IExecuteService.cs" />
+    <Compile Include="Services\Sources\Scm\ISourcesScmService.cs" />
+    <Compile Include="Services\Sources\Scm\SourcesScmService.cs" />
     <Compile Include="Utilities\EffortConversion.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="extensions.md" />
     <None Include="packages.config" />
     <None Include="Service.md" />
     <None Include="SonarQube.API.ruleset" />
+    <None Include="Utilities\ServicePokaJoke.md" />
   </ItemGroup>
   <ItemGroup>
     <Analyzer Include="..\packages\SonarAnalyzer.CSharp.1.11.0\analyzers\SonarAnalyzer.CSharp.dll" />
@@ -143,6 +169,8 @@
     <Folder Include="Connector\Interfaces\" />
     <Folder Include="Implementations\Commands\" />
     <Folder Include="Implementations\Services\" />
+    <Folder Include="Services\IssuesSearch\" />
+    <Folder Include="Services\Rules\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

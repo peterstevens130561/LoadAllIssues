@@ -21,7 +21,7 @@ namespace PeterSoft.SonarQubeConnector.CommandHandlers
         public void Execute(IssueAssignCommand command)
         {
             IRestParameters restParameters = command.Parameters();
-            restClient.SetPath("issues/assign").Post(restParameters);
+            restClient.SetPath(@"issues/assign").Post(restParameters);
 
         }
     }

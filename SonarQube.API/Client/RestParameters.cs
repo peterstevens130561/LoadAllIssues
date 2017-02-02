@@ -20,9 +20,17 @@ namespace PeterSoft.SonarQubeConnector.API.Logic
 
         public IRestParameters SetParameter(string v, bool value)
         {
+            string boolTxt = value ? @"true" : "false";
+            SetParameter(v, boolTxt);
+            return this;
+        }
+
+        public IRestParameters SetParameter(string v, int value)
+        {
             SetParameter(v, value.ToString());
             return this;
         }
+
         public string GetParameter(string key)
         {
             return parameters[key];
@@ -31,10 +39,13 @@ namespace PeterSoft.SonarQubeConnector.API.Logic
         public String Build()
         {
             StringBuilder sb = new StringBuilder();
-            parameters.ToList().ForEach(kv => sb.Append("&").Append(kv.Key).Append("=").Append(kv.Value));
+            parameters.ToList().ForEach(kv => sb.Append(@"&").Append(kv.Key).Append(@"=").Append(kv.Value));
             return sb.ToString();
         }
 
-
+        public IDictionary<string, string> Values()
+        {
+            return parameters;
+        }
     }
 }

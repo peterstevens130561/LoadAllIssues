@@ -10,5 +10,5 @@
 	/d:sonar.resharper.inspectcode.cacheshome=E:\Development\Radiant\Main\InspectCode\Cache\. ^
 	/d:sonar.resharper.usecache=true /d:sonar.mscover.workspace=E:\Development\Radiant\Main\. ^
 	/d:sonar.cs.fxcop.dictionaryPath=E:\Development\Radiant\Main\Build\CustomDictionary.xml
-"C:\Program Files (x86)\MSBuild\14.0\bin\msbuild.exe" /p:RunCodeAnalysis=true /verbosity:quiet /clp:NoSummary;NoItemAndPropertyList;ErrorsOnly  /p:Platform=x64 /p:Configuration=Release
-"C:\Program Files\SonarQube\MSBuild.SonarQube.Runner.Exe" end
+"C:\Program Files (x86)\MSBuild\14.0\bin\msbuild.exe" /p:RunCodeAnalysis=true /verbosity:diag /clp:NoSummary;NoItemAndPropertyList;ErrorsOnly  /p:Platform=x64 /p:Configuration=Release > log.txt
+#"C:\Program Files\SonarQube\MSBuild.SonarQube.Runner.Exe" end

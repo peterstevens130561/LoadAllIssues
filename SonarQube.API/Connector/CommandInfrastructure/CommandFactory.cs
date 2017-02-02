@@ -7,7 +7,7 @@ namespace PeterSoft.SonarQubeConnector.Infrastructure.Commands
 {
     class CommandFactory : ICommandFactory
     {
-        private Dictionary<Type, Type> commandMap = new Dictionary<Type, Type>();
+        private readonly Dictionary<Type, Type> commandMap = new Dictionary<Type, Type>();
         private readonly IRestClient restClient;
 
         public CommandFactory(IRestClient restClient)
@@ -25,10 +25,11 @@ namespace PeterSoft.SonarQubeConnector.Infrastructure.Commands
             restClient.Connect(credentials);
             if (!commandMap.ContainsKey(typeof(T)))
             {
-                throw new ArgumentException("unsupported type");
+                throw new ArgumentException(@"unsupported type");
             }
             var concrete = commandMap[typeof(T)];
-            return (T)Activator.CreateInstance(concrete,restClient);
+            return (T)Activator.CreateInstance(concrete,new RestParameters());
+
         }
     }
 }

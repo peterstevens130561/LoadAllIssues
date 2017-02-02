@@ -8,9 +8,9 @@ namespace PeterSoft.SonarQubeConnector.Models
 {
     public class TextRange
     {
-        int StartLine { get; set; }
-        int EndLine { get; set; }
-        int StartOffset { get; set; }
-        int EndOffset { get; set; }
+        public int StartLine { get; set; }
+        public int EndLine { get; set; }
+        public int StartOffset { get; set; }
+        public int EndOffset { get; set; }
     }
 }

@@ -1,4 +1,6 @@
-﻿using PeterSoft.SonarQubeConnector.Infrastructure.Commands;
+﻿using PeterSoft.SonarQubeConnector.API.Logic;
+using PeterSoft.SonarQubeConnector.Infrastructure.Commands;
+using PeterSoft.SonarQubeConnector.Services;
 
 namespace PeterSoft.SonarQubeConnector
 {
@@ -9,7 +11,7 @@ namespace PeterSoft.SonarQubeConnector
         /// <summary>
         /// Create new instance of a query service
         /// </summary>
-        TService CreateQueryService<TService>();
+        TService CreateService<TService>() where TService : IService;
 
         /// <summary>
         /// Create service to retrieve data from SonarQube
@@ -20,6 +22,6 @@ namespace PeterSoft.SonarQubeConnector
         /// Execute the command, exception thrown if it fails
         /// </summary>
         void SubmitCommand<T>(T command) where T : ICommand;
-
+        TService CreateService<TService>(IRestClient restClient, IRestParameters restParameters) where TService : IService;
     }
 }

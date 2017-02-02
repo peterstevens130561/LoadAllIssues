@@ -1,0 +1,6 @@
+Microsoft (R) Build Engine version 14.0.25420.1
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+C:\Program Files (x86)\MSBuild\14.0\bin\msbuild.exe /clp:NoSummary;NoItemAndPropertyList;ErrorsOnly /p:RunCodeAnalysis=true /p:Platform=x64 /p:Configuration=Release /verbosity:diag .\LoadAllIssues.sln
+Building the projects in this solution one at a time. To enable parallel build, please add the "/m" switch.
+IssuesTagsServiceTest.cs(7,58): error CS0246: The type or namespace name 'IIssuesTagsService' could not be found (are you missing a using directive or an assembly reference?) [E:\Development\General Development\Peter Stevens\LoadAllIssues\SonarQubeConnector.UnitTest\SonarQubeConnector.UnitTest.csproj]

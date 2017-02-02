@@ -9,7 +9,7 @@ namespace PeterSoft.SonarQubeConnector.API.Utilities
 
         }
 
-        readonly static String pattern = "((?<day>\\d+)d)?((?<hour>\\d+)h)?((?<min>\\d+)min)?";
+        readonly static String pattern = @"((?<day>\d+)d)?((?<hour>\d+)h)?((?<min>\d+)min)?";
         public static int ConvertToMin(string effortTxt)
         {
             if(effortTxt==null) {

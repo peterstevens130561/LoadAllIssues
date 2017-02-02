@@ -1,7 +1,9 @@
 ﻿
+using System;
 using PeterSoft.SonarQubeConnector.API.Logic;
 using PeterSoft.SonarQubeConnector.Infrastructure.Commands;
 using PeterSoft.SonarQubeConnector.Infrastructure.Services;
+using PeterSoft.SonarQubeConnector.Services;
 
 namespace PeterSoft.SonarQubeConnector
 {
@@ -55,9 +57,21 @@ namespace PeterSoft.SonarQubeConnector
         /// </summary>
         /// <typeparam name="TType"></typeparam>
         /// <returns></returns>
-        public TType CreateQueryService<TType>()
+        public TType CreateService<TType>() where TType : IService
         {
             return serviceFactory.CreateService<TType>(credentials);
+        }
+
+        /// <summary>
+        /// Create service specifying client and parameters. Mainly intended for unit testing
+        /// </summary>
+        /// <typeparam name="TService"></typeparam>
+        /// <param name="restClient"></param>
+        /// <param name="restParameters"></param>
+        /// <returns></returns>
+        public TService CreateService<TService>(IRestClient restClient, IRestParameters restParameters) where TService : IService
+        {
+            return serviceFactory.CreateService<TService>(restClient,restParameters);
         }
     }
 }
