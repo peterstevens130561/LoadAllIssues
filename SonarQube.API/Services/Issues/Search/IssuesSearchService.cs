@@ -33,8 +33,7 @@ namespace PeterSoft.SonarQubeConnector.Services
 
         public IIssuesSearchService SetCreatedAfter(DateTimeOffset after)
         {
-            string value = after.ToString("yyyy-MM-dd", System.Globalization.CultureInfo.InvariantCulture);
-            SetParameter(@"createdAfter", value);
+            SetIsoDateParameter(@"createdAfter", after);
             return this;
         }
 
@@ -46,10 +45,16 @@ namespace PeterSoft.SonarQubeConnector.Services
 
         public IIssuesSearchService SetCreatedBefore(DateTime before)
         {
-            string value = before.ToString("yyyy-MM-dd", System.Globalization.CultureInfo.InvariantCulture);
-            SetParameter(@"createdBefore", value);
+            SetIsoDateParameter(@"createdBefore", before);
             return this;
         }
+
+        public IIssuesSearchService SetCreatedAt(DateTime before)
+        {
+            SetIsoDateParameter(@"createdAt", before);
+            return this;
+        }
+
     }
 
     public class IssuesSearchPage : Page<Issue>

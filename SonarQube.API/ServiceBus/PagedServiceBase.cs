@@ -1,6 +1,7 @@
 ﻿
 using System.Collections.Generic;
 using PeterSoft.SonarQubeConnector.API.Logic;
+using System;
 
 namespace PeterSoft.SonarQubeConnector.Services
 {
@@ -57,6 +58,12 @@ namespace PeterSoft.SonarQubeConnector.Services
         internal void SetParameter(string key, string value)
         {
             restService.SetParameter(key, value);
+        }
+
+        internal void SetIsoDateParameter(string parameter, DateTimeOffset date)
+        {
+            string value = date.ToString("yyyy-MM-dd", System.Globalization.CultureInfo.InvariantCulture);
+            restService.SetParameter(parameter, value);
         }
     }
 }

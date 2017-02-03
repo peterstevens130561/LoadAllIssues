@@ -30,13 +30,16 @@ namespace SonarQubeConnector.UnitTest
             service.SetCreatedAfter(after);
             DateTime before = new DateTime(2017, 05, 06, 07, 08, 09);
             service.SetCreatedBefore(before);
+            DateTime at = new DateTime(2017, 01, 02, 03, 04, 05);
+            service.SetCreatedAt(at);
 
-            restParameters.Verify(p => p.SetParameter("projectKeys", "key"));
-            restParameters.Verify(p => p.SetParameter("rules", "rule1"));
-            restParameters.Verify(p => p.SetParameter("statuses", "bogus"));
-            restParameters.Verify(p => p.SetParameter("createdAfter", "2017-04-05"));
-            restParameters.Verify(p => p.SetParameter("severities", "MAJOR,INFO"));
-            restParameters.Verify(p => p.SetParameter("createdBefore", "2017-05-06"));
+            restParameters.Verify(p => p.SetParameter(@"projectKeys", @"key"));
+            restParameters.Verify(p => p.SetParameter(@"rules", @"rule1"));
+            restParameters.Verify(p => p.SetParameter(@"statuses", @"bogus"));
+            restParameters.Verify(p => p.SetParameter(@"createdAfter", @"2017-04-05"));
+            restParameters.Verify(p => p.SetParameter(@"severities", @"MAJOR,INFO"));
+            restParameters.Verify(p => p.SetParameter(@"createdBefore", @"2017-05-06"));
+            restParameters.Verify(p => p.SetParameter(@"createdAt", @"2017-01-02"));
         }
 
 
