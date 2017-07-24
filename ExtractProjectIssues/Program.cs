@@ -17,7 +17,7 @@ namespace ExtractProjectIssues
         {
             var connector = new SonarQubeConnector();
             var session = connector.CreateSession();
-            session.Connect(args[0], args[1], args[2]);
+            session.ConnectWithToken(args[0], args[1]);
             var projectsService = session.CreateService<IProjectsIndexService>();
             projectsService.SetKey("Transformer-Bhi.Esie.TooLink");
             var projects = projectsService.Execute();
