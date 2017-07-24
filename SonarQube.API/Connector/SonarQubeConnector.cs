@@ -27,10 +27,13 @@ namespace PeterSoft.SonarQube.Connector
         private readonly IServiceFactory serviceFactory;
        
 
-        public SonarQubeConnector()
+        public SonarQubeConnector() : this(new RestClient())
         {
+        }
 
-            restClient = new RestClient();
+        internal SonarQubeConnector(RestClient restClient)
+        {
+            this.restClient = restClient;
             serviceFactory = new ServiceFactory(restClient);
             RegisterServices();
             commandFactory = new CommandFactory(restClient);

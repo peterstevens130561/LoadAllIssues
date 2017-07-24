@@ -10,18 +10,7 @@ namespace PeterSoft.SonarQube.Connector.Application
     [TestClass]
     public class UnitTest1
     {
-        [TestMethod]
-        public void NullException()
-        {
-            IList<String> list = null;
-            int i = 0;
-            foreach (var name in list)
-            {
-                i++;
-            }
-        }
 
-        [TestMethod]
         public void CheckProject()
         {
             var qualityGate = new QualityGate();
@@ -34,14 +23,15 @@ namespace PeterSoft.SonarQube.Connector.Application
             qualityGate.Conditions = new List<Condition>();
             qualityGate.Conditions.Add(condition);
 
-
-            var measures = new ComponentMeasures();
             var measure = new Measure();
             measure.Metric = "blockers";
             measure.Value = "1";
             measure.Periods = new List<MeasurePeriod>();
             measure.Periods.Add(new MeasurePeriod(1, "7"));
 
+            var measures = new ComponentMeasures();
+            measures.Component = new MeasuresDetail();
+            measures.Component.Measures = new List<Measure>();
             measures.Component.Measures.Add(measure);
             var conditionEvaluator = new ConditionEvaluator(qualityGate);
             string result = conditionEvaluator.Evaluate(measures.Component.Measures);

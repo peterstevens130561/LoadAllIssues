@@ -24,7 +24,7 @@ namespace PeterSoft.SonarQube.Connector.Infrastructure.Services
         public TType CreateService<TType>(ICredentials credentials) where TType : IService
         {
 
-            restGetter.Connect(credentials);
+            restGetter.SetCredentials(credentials);
             return CreateService<TType>(restGetter, new RestParameters());
         }
 

@@ -22,7 +22,7 @@ namespace PeterSoft.SonarQube.Connector.Infrastructure.Commands
 
         public T CreateCommand<T>(ICredentials credentials) where T : ICommand
         {
-            restClient.Connect(credentials);
+            restClient.SetCredentials(credentials);
             if (!commandMap.ContainsKey(typeof(T)))
             {
                 throw new ArgumentException(@"unsupported type");

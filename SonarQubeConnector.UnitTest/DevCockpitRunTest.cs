@@ -13,16 +13,17 @@ namespace PeterSoft.SonarQube.Connector.UnitTest
     public class DevCockpitRunTest
     {
         [TestMethod]
-        public void InstantiationTest()
+        public void DevCockpitRunCommand_InstantiationTest()
         {
             var connector = new SonarQubeConnector();
             var session = connector.CreateSession();
+            session.Connect("a", "b", "c");
             var command = session.CreateCommand<IDevCockpitRunCommand>();
             Assert.IsNotNull(command);
             Assert.IsInstanceOfType(command,typeof(DevCockpitRunCommand));
         }
         [TestMethod]
-        public void TestCommandHandler()
+        public void DevCockpitRunCommand_TestCommandHandler()
         {
             var developerTasks = new List<DeveloperTask>();
             developerTasks.Add(new DeveloperTask());

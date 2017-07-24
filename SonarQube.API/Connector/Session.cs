@@ -74,9 +74,9 @@ namespace PeterSoft.SonarQube.Connector
             return serviceFactory.CreateService<TService>(restClient,restParameters);
         }
 
-        public void ConnectWithToken(string server, string token)
+        public virtual void ConnectWithToken(string serverUrl, string token)
         {
-            throw new NotImplementedException();
+            credentials = new Credentials(serverUrl, token,"");
         }
     }
 }

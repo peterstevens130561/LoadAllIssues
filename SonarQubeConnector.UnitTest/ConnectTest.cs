@@ -3,6 +3,10 @@ using System.Text;
 using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using PeterSoft.SonarQube.Connector;
+using PeterSoft.SonarQube.Connector.Services;
+using PeterSoft.SonarQube.Connector.API.Logic;
+using Moq;
+
 namespace Connector.UnitTest
 {
     /// <summary>
@@ -57,15 +61,20 @@ namespace Connector.UnitTest
         // public void MyTestCleanup() { }
         //
         #endregion
-
+        /// <summary>
+        /// Test a connect with a token
+        /// </summary>
         [TestMethod]
-        public void ConnectWithToken()
+        public void ConnectGetWithToken()
         {
-            var connector = new SonarQubeConnector();
+            var restClientMock = new Mock<RestClient>();
+            var connector = new SonarQubeConnector(restClientMock.Object);
             var session = connector.CreateSession();
-            string server = "bogus";
+            string server = "http://bogus";
             string token = "3795b31a6ad2e29a03ebe9a6897675e38200fdb9";
             session.ConnectWithToken(server,token);
+            IProjectsIndexService projectsIndexService = session.CreateService<IProjectsIndexService>();
+            restClientMock.Verify(client => client.SetCredentials(server, token, ""));
         }
     }
 }

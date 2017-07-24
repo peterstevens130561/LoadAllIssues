@@ -19,8 +19,8 @@ namespace LoadAllIssues
         {
             var connector = new SonarQubeConnector();
             var session = connector.CreateSession();
-            session.Connect(args[0], args[1], args[2]);
-
+            //session.Connect(args[0], args[1], args[2]);
+            session.ConnectWithToken(args[0], args[1]);
             var projectsIndexService = session.CreateService<IProjectsIndexService>();
             var projects = projectsIndexService.Execute();
             var listedRules = new List<String>();

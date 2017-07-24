@@ -22,7 +22,7 @@ namespace PeterSoft.SonarQube.Connector.API.Logic {
             return this;
         }
 
-        public void Connect(string url, string username, string password)
+        public virtual void SetCredentials(string url, string username, string password)
         {
             this.url = url;
             this.username = username;
@@ -40,9 +40,9 @@ namespace PeterSoft.SonarQube.Connector.API.Logic {
 
         }
 
-        public void Connect(ICredentials credentials)
+        public void SetCredentials(ICredentials credentials)
         {
-            Connect(credentials.Url, credentials.Username, credentials.Password);
+            SetCredentials(credentials.Url, credentials.Username, credentials.Password);
         }
 
         public void Post(IRestParameters parameters)

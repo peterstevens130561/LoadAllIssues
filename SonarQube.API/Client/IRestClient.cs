@@ -18,7 +18,7 @@
         /// set before calling Execute or Post
         /// </summary>
         /// <param name="credentials"></param>
-        void Connect(ICredentials credentials);
+        void SetCredentials(ICredentials credentials);
 
         /// <summary>
         /// execute a post, path should be set.

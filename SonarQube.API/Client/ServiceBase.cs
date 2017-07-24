@@ -17,7 +17,8 @@ namespace PeterSoft.SonarQube.Connector.Services
 
         public virtual T Execute()
         {
-            string result= restClient.SetPath(path).Get(base.Parameters());
+            restClient.SetPath(path);
+            string result = restClient.Get(base.Parameters());
             return JsonConvert.DeserializeObject<T>(result);
         }
 
