@@ -87,6 +87,7 @@
     <Compile Include="Models\Diff.cs" />
     <Compile Include="Models\Profile.cs" />
     <Compile Include="Models\ProfilesResponse.cs" />
+    <Compile Include="Services\IDuplicationsShowService.cs" />
     <Compile Include="Services\IMetricsSearch.cs" />
     <Compile Include="Commands\DevCockpitRunCommand.cs" />
     <Compile Include="Handlers\DevCockpitRunCommandHandler.cs" />

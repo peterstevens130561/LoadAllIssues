@@ -12,7 +12,7 @@ namespace PeterSoft.SonarQubeConnector.Services
 
         public IProjectsIndexService SetKey(string projectKey)
         {
-            SetParameter("projectKey", projectKey);
+            SetParameter(@"key", projectKey);
             return this;
         }
     }

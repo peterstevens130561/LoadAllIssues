@@ -23,19 +23,19 @@ namespace PeterSoft.SonarQubeConnector
     {
         private readonly ICommandBus commandBus;
         private readonly ICommandFactory commandFactory;
-        private readonly RestClient restGetter;
+        private readonly RestClient restClient;
         private readonly IServiceFactory serviceFactory;
-        private readonly WebClient webClient;
+       
 
         public SonarQubeConnector()
         {
 
-            restGetter = new RestClient();
-            serviceFactory = new ServiceFactory(restGetter);
+            restClient = new RestClient();
+            serviceFactory = new ServiceFactory(restClient);
             RegisterServices();
-            commandFactory = new CommandFactory(restGetter);
+            commandFactory = new CommandFactory(restClient);
             RegisterCommands();
-            commandBus = new CommandBus(restGetter);
+            commandBus = new CommandBus(restClient);
             RegisterCommandHandlers();
         }
 

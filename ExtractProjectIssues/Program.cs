@@ -19,6 +19,7 @@ namespace ExtractProjectIssues
             var session = connector.CreateSession();
             session.Connect(args[0], args[1], args[2]);
             var projectsService = session.CreateService<IProjectsIndexService>();
+            projectsService.SetKey("Transformer-Bhi.Esie.TooLink");
             var projects = projectsService.Execute();
             var issuesSearchService = session.CreateService<IIssuesSearchService>();
             issuesSearchService.SetStatuses(@"OPEN");
@@ -32,9 +33,6 @@ namespace ExtractProjectIssues
                     Console.WriteLine(project.Nm + @"|" + issue.Message + @"|" + issue.Component + @"|" + issue.Line + @"|" + issue.Rule + @"|" + issue.Severity);
                 }
             }
-
-
-
         }
     }
 }
