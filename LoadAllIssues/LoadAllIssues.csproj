@@ -59,6 +59,12 @@
       <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="SonarQube.API">
+      <HintPath>..\SonarQube.API\bin\Debug\SonarQube.API.dll</HintPath>
+    </Reference>
+    <Reference Include="SonarQubeConnector">
+      <HintPath>..\SonarQube.API\bin\Debug\SonarQubeConnector.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -76,12 +82,6 @@
     <None Include="App.config" />
     <None Include="LoadAllIssues.ruleset" />
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\SonarQube.API\SonarQubeConnector.csproj">
-      <Project>{9ccd2b62-3dc0-463a-b146-ec5f1fe84aea}</Project>
-      <Name>SonarQubeConnector</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Analyzer Include="..\packages\SonarAnalyzer.CSharp.1.11.0\analyzers\SonarAnalyzer.CSharp.dll" />

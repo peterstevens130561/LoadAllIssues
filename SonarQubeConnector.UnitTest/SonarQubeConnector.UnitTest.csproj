@@ -76,12 +76,6 @@
     <Compile Include="DuplicationsShowServiceTest.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SonarQube.API\SonarQubeConnector.csproj">
-      <Project>{9ccd2b62-3dc0-463a-b146-ec5f1fe84aea}</Project>
-      <Name>SonarQubeConnector</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <Choose>

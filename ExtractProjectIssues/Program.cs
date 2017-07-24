@@ -23,14 +23,17 @@ namespace ExtractProjectIssues
             var projects = projectsService.Execute();
             var issuesSearchService = session.CreateService<IIssuesSearchService>();
             issuesSearchService.SetStatuses(@"OPEN");
-            Console.WriteLine(@"Project|Message|Component|Line|Rule|Severity|");
-            foreach (var project in projects)
+            using (var writer = new System.IO.StreamWriter("issues.csv"))
             {
-                issuesSearchService.SetProjectKeys(project.K);
-                var issues = issuesSearchService.Execute();
-                foreach (var issue in issues)
+                writer.WriteLine(@"Project|Message|Component|Line|Rule|Severity|");
+                foreach (var project in projects)
                 {
-                    Console.WriteLine(project.Nm + @"|" + issue.Message + @"|" + issue.Component + @"|" + issue.Line + @"|" + issue.Rule + @"|" + issue.Severity);
+                    issuesSearchService.SetProjectKeys(project.K);
+                    var issues = issuesSearchService.Execute();
+                    foreach (var issue in issues)
+                    {
+                        writer.WriteLine(project.Nm + @"|" + issue.Message + @"|" + issue.Component + @"|" + issue.Line + @"|" + issue.Rule + @"|" + issue.Severity);
+                    }
                 }
             }
         }

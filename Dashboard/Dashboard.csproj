@@ -35,6 +35,12 @@
     <CodeAnalysisRuleSet>Dashboard.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="SonarQube.API">
+      <HintPath>..\SonarQube.API\bin\Debug\SonarQube.API.dll</HintPath>
+    </Reference>
+    <Reference Include="SonarQubeConnector">
+      <HintPath>..\SonarQube.API\bin\Debug\SonarQubeConnector.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -53,12 +59,6 @@
     <None Include="App.config" />
     <None Include="Dashboard.ruleset" />
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\SonarQube.API\SonarQubeConnector.csproj">
-      <Project>{9CCD2B62-3DC0-463A-B146-EC5F1FE84AEA}</Project>
-      <Name>SonarQubeConnector</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Analyzer Include="..\packages\SonarAnalyzer.CSharp.1.11.0\analyzers\SonarAnalyzer.CSharp.dll" />

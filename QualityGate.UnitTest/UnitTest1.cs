@@ -4,6 +4,7 @@ using PeterSoft.SonarQube.Connector.Models;
 using PeterSoft.SonarQube.Connector.Services;
 using Moq;
 using System.Collections.Generic;
+using PeterSoft.SonarQube.Connector.Application;
 
 namespace PeterSoft.SonarQube.Connector.Application
 {

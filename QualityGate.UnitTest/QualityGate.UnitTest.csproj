@@ -62,10 +62,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\QualityGate\QualityGate.csproj">
-      <Project>{62badaac-8e96-4502-a4e3-fc9bb28dc5b1}</Project>
-      <Name>QualityGate</Name>
-    </ProjectReference>
     <ProjectReference Include="..\SonarQube.API\SonarQubeConnector.csproj">
       <Project>{9ccd2b62-3dc0-463a-b146-ec5f1fe84aea}</Project>
       <Name>SonarQubeConnector</Name>
