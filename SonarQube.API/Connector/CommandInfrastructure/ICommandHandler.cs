@@ -1,4 +1,4 @@
-﻿namespace PeterSoft.SonarQubeConnector.Infrastructure.Commands
+﻿namespace PeterSoft.SonarQube.Connector.Infrastructure.Commands
 {
     public interface ICommandHandler<in TCommand> where TCommand : ICommand
     {

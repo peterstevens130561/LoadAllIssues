@@ -1,12 +1,12 @@
-﻿using PeterSoft.SonarQubeConnector.Models;
+﻿using PeterSoft.SonarQube.Connector.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using PeterSoft.SonarQubeConnector.API.Logic;
+using PeterSoft.SonarQube.Connector.API.Logic;
 
-namespace PeterSoft.SonarQubeConnector.Services
+namespace PeterSoft.SonarQube.Connector.Services
 {
     class SourcesScmService : ServiceBase<SourcesScmResponse>, ISourcesScmService
     {

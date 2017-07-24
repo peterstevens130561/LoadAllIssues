@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Text.RegularExpressions;
-namespace PeterSoft.SonarQubeConnector.API.Utilities
+namespace PeterSoft.SonarQube.Connector.API.Utilities
 {
     public class EffortConversion
     {

@@ -2,7 +2,7 @@
 
 using System.Collections.Generic;
 
-namespace PeterSoft.SonarQubeConnector.Services
+namespace PeterSoft.SonarQube.Connector.Services
 {
     /// <summary>
     /// provides the transitions from the current status of the specified issue

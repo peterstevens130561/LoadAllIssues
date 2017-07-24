@@ -1,10 +1,10 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using PeterSoft.SonarQubeConnector.API.Logic;
+using PeterSoft.SonarQube.Connector.API.Logic;
 using System.Collections.Generic;
-using PeterSoft.SonarQubeConnector.Models;
+using PeterSoft.SonarQube.Connector.Models;
 
-namespace SonarQubeConnector.UnitTest
+namespace Connector.UnitTest
 {
     [TestClass]
     public class QualityProfilesSearchTest

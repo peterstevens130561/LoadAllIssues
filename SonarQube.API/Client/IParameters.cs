@@ -1,6 +1,6 @@
-﻿using PeterSoft.SonarQubeConnector.API.Logic;
+﻿using PeterSoft.SonarQube.Connector.API.Logic;
 
-namespace PeterSoft.SonarQubeConnector.Client
+namespace PeterSoft.SonarQube.Connector.Client
 {
     internal interface IParameters
     {

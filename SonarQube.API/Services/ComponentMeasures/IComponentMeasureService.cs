@@ -1,6 +1,6 @@
-﻿using PeterSoft.SonarQubeConnector.Models;
+﻿using PeterSoft.SonarQube.Connector.Models;
 
-namespace PeterSoft.SonarQubeConnector.Services
+namespace PeterSoft.SonarQube.Connector.Services
 {
     public interface IComponentMeasuresService : IExecuteService<ComponentMeasures>
     {

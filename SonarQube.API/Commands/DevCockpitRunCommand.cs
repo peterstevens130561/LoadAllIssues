@@ -1,14 +1,14 @@
-﻿using PeterSoft.SonarQubeConnector.Commands;
+﻿using PeterSoft.SonarQube.Connector.Commands;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using PeterSoft.SonarQubeConnector.Models;
-using PeterSoft.SonarQubeConnector.Client;
-using PeterSoft.SonarQubeConnector.API.Logic;
+using PeterSoft.SonarQube.Connector.Models;
+using PeterSoft.SonarQube.Connector.Client;
+using PeterSoft.SonarQube.Connector.API.Logic;
 
-namespace PeterSoft.SonarQubeConnector.Commands
+namespace PeterSoft.SonarQube.Connector.Commands
 {
     class DevCockpitRunCommand : ParametersBase, IDevCockpitRunCommand
     {

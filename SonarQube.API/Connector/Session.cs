@@ -1,11 +1,11 @@
 ﻿
 using System;
-using PeterSoft.SonarQubeConnector.API.Logic;
-using PeterSoft.SonarQubeConnector.Infrastructure.Commands;
-using PeterSoft.SonarQubeConnector.Infrastructure.Services;
-using PeterSoft.SonarQubeConnector.Services;
+using PeterSoft.SonarQube.Connector.API.Logic;
+using PeterSoft.SonarQube.Connector.Infrastructure.Commands;
+using PeterSoft.SonarQube.Connector.Infrastructure.Services;
+using PeterSoft.SonarQube.Connector.Services;
 
-namespace PeterSoft.SonarQubeConnector
+namespace PeterSoft.SonarQube.Connector
 {
     internal class Session : ISession
     {
@@ -72,6 +72,11 @@ namespace PeterSoft.SonarQubeConnector
         public TService CreateService<TService>(IRestClient restClient, IRestParameters restParameters) where TService : IService
         {
             return serviceFactory.CreateService<TService>(restClient,restParameters);
+        }
+
+        public void ConnectWithToken(string server, string token)
+        {
+            throw new NotImplementedException();
         }
     }
 }

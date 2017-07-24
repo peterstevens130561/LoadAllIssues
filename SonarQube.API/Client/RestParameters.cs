@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace PeterSoft.SonarQubeConnector.API.Logic
+namespace PeterSoft.SonarQube.Connector.API.Logic
 {
     public class RestParameters : IRestParameters
     {

@@ -1,7 +1,7 @@
-﻿using PeterSoft.SonarQubeConnector.API.Logic;
-using PeterSoft.SonarQubeConnector.Services;
+﻿using PeterSoft.SonarQube.Connector.API.Logic;
+using PeterSoft.SonarQube.Connector.Services;
 
-namespace PeterSoft.SonarQubeConnector.Infrastructure.Services
+namespace PeterSoft.SonarQube.Connector.Infrastructure.Services
 {
     public interface IServiceFactory
     {

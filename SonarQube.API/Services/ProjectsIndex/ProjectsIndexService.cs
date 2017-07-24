@@ -1,9 +1,9 @@
 ﻿
-using PeterSoft.SonarQubeConnector.API.Logic;
-using PeterSoft.SonarQubeConnector.Models;
+using PeterSoft.SonarQube.Connector.API.Logic;
+using PeterSoft.SonarQube.Connector.Models;
 using System.Collections.Generic;
 
-namespace PeterSoft.SonarQubeConnector.Services
+namespace PeterSoft.SonarQube.Connector.Services
 {
     internal class ProjectsIndexService: ServiceBase<IList<Project>>, IProjectsIndexService
     {

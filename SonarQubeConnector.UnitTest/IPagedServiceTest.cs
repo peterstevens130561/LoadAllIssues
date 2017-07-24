@@ -1,4 +1,4 @@
-﻿namespace SonarQubeConnector.UnitTest
+﻿namespace Connector.UnitTest
 {
     /// <summary>
     /// Each paged service should implement these simple tests

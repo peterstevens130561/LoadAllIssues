@@ -1,8 +1,8 @@
 ﻿
 
-using PeterSoft.SonarQubeConnector.API.Logic;
+using PeterSoft.SonarQube.Connector.API.Logic;
 
-namespace PeterSoft.SonarQubeConnector.Infrastructure.Commands
+namespace PeterSoft.SonarQube.Connector.Infrastructure.Commands
 {
     internal interface ICommandFactory
     {

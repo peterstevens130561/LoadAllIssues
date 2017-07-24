@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using PeterSoft.SonarQubeConnector.API.Logic;
-using PeterSoft.SonarQubeConnector.Models;
+using PeterSoft.SonarQube.Connector.API.Logic;
+using PeterSoft.SonarQube.Connector.Models;
 
-namespace PeterSoft.SonarQubeConnector.Services
+namespace PeterSoft.SonarQube.Connector.Services
 {
     class IssuesAuthorsService : ServiceBase<IssuesAuthorsServiceResponse>,IIssuesAuthorsService
     {

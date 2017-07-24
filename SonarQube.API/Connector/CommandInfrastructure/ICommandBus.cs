@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PeterSoft.SonarQubeConnector.Infrastructure.Commands
+namespace PeterSoft.SonarQube.Connector.Infrastructure.Commands
 {
     public interface ICommandBus
     {

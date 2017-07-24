@@ -1,9 +1,9 @@
 ﻿
-using PeterSoft.SonarQubeConnector.Models;
+using PeterSoft.SonarQube.Connector.Models;
 using System;
 using System.Collections.Generic;
 
-namespace PeterSoft.SonarQubeConnector.Models
+namespace PeterSoft.SonarQube.Connector.Models
 {
     public class RulesShow
     {

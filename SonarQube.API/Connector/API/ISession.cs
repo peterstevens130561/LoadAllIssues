@@ -1,8 +1,8 @@
-﻿using PeterSoft.SonarQubeConnector.API.Logic;
-using PeterSoft.SonarQubeConnector.Infrastructure.Commands;
-using PeterSoft.SonarQubeConnector.Services;
+﻿using PeterSoft.SonarQube.Connector.API.Logic;
+using PeterSoft.SonarQube.Connector.Infrastructure.Commands;
+using PeterSoft.SonarQube.Connector.Services;
 
-namespace PeterSoft.SonarQubeConnector
+namespace PeterSoft.SonarQube.Connector
 {
     public interface ISession
     {
@@ -23,5 +23,11 @@ namespace PeterSoft.SonarQubeConnector
         /// </summary>
         void SubmitCommand<T>(T command) where T : ICommand;
         TService CreateService<TService>(IRestClient restClient, IRestParameters restParameters) where TService : IService;
+        /// <summary>
+        /// Prepares the connection setup using a token
+        /// </summary>
+        /// <param name="server"></param>
+        /// <param name="token"></param>
+        void ConnectWithToken(string server, string token);
     }
 }

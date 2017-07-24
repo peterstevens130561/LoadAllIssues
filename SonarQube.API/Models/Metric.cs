@@ -1,4 +1,4 @@
-﻿namespace PeterSoft.SonarQubeConnector.Models
+﻿namespace PeterSoft.SonarQube.Connector.Models
 {
     /// <summary>
     /// Used in api/metrics

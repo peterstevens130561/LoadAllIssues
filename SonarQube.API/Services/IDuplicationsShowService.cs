@@ -4,9 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PeterSoft.SonarQubeConnector.Services
+namespace PeterSoft.SonarQube.Connector.Services
 {
-    interface IDuplicationsShowService // : IExecuteService<Duplications>
+    public interface IDuplicationsShowService : IService
     {
+        IDuplicationsShowService SetFileKey(string fileKey);
+        IDuplicationsShowService SetUUID(string uuid);
     }
 }

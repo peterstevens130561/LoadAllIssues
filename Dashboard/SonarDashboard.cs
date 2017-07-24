@@ -1,7 +1,7 @@
 ﻿
 using System.Text;
-using PeterSoft.SonarQubeConnector;
-using PeterSoft.SonarQubeConnector.Services;
+using PeterSoft.SonarQube.Connector;
+using PeterSoft.SonarQube.Connector.Services;
 
 namespace Dashboard
 {

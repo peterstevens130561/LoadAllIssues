@@ -1,4 +1,4 @@
-﻿namespace SonarQubeConnector.UnitTest
+﻿namespace Connector.UnitTest
 {
      public interface IServiceTest
     {

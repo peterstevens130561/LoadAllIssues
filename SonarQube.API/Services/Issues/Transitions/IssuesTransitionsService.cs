@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using PeterSoft.SonarQubeConnector.API.Logic;
+using PeterSoft.SonarQube.Connector.API.Logic;
 
-namespace PeterSoft.SonarQubeConnector.Services.Issues
+namespace PeterSoft.SonarQube.Connector.Services.Issues
 {
     class IssuesTransitionsService : ServiceBase<IssuesTransitionsServiceResponse>, IIssuesTransitionsService
     {

@@ -1,6 +1,6 @@
 ﻿
 
-namespace PeterSoft.SonarQubeConnector.API.Logic
+namespace PeterSoft.SonarQube.Connector.API.Logic
 {
     /// <summary>
     /// Simple value object for the user's credentials

@@ -1,11 +1,11 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using PeterSoft.SonarQubeConnector.Services;
+using PeterSoft.SonarQube.Connector.Services;
 using Moq;
 using System.Collections.Generic;
-using PeterSoft.SonarQubeConnector.API.Logic;
+using PeterSoft.SonarQube.Connector.API.Logic;
 
-namespace SonarQubeConnector.UnitTest
+namespace Connector.UnitTest
 {
     [TestClass]
     public class IssuesTransitionsServiceTest : ServiceTestBase<IIssuesTransitionsService>

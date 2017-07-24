@@ -1,8 +1,8 @@
 ﻿
-using PeterSoft.SonarQubeConnector.Models;
+using PeterSoft.SonarQube.Connector.Models;
 using System;
 
-namespace PeterSoft.SonarQubeConnector.Services
+namespace PeterSoft.SonarQube.Connector.Services
 {
     public interface IRulesShowService : IExecuteService<RulesShow>
     {

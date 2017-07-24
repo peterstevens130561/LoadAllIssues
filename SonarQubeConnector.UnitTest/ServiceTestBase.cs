@@ -5,10 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Moq;
-using PeterSoft.SonarQubeConnector.API.Logic;
-using PeterSoft.SonarQubeConnector.Services;
+using PeterSoft.SonarQube.Connector.API.Logic;
+using PeterSoft.SonarQube.Connector.Services;
 
-namespace SonarQubeConnector.UnitTest
+namespace Connector.UnitTest
 {
     /// <summary>
     /// Base testset for Services.
@@ -39,7 +39,7 @@ namespace SonarQubeConnector.UnitTest
         /// <returns></returns>
         protected T createService()
         {
-            var connector = new PeterSoft.SonarQubeConnector.SonarQubeConnector();
+            var connector = new PeterSoft.SonarQube.Connector.SonarQubeConnector();
             var session = connector.CreateSession();
             return session.CreateService<T>(clientMock.Object,restParametersMock.Object);
         }

@@ -1,13 +1,13 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using PeterSoft.SonarQubeConnector.Commands;
-using PeterSoft.SonarQubeConnector.CommandHandlers;
+using PeterSoft.SonarQube.Connector.Commands;
+using PeterSoft.SonarQube.Connector.CommandHandlers;
 using Moq;
-using PeterSoft.SonarQubeConnector.API.Logic;
-using PeterSoft.SonarQubeConnector.Models;
+using PeterSoft.SonarQube.Connector.API.Logic;
+using PeterSoft.SonarQube.Connector.Models;
 using System.Collections.Generic;
 
-namespace PeterSoft.SonarQubeConnector.UnitTest
+namespace PeterSoft.SonarQube.Connector.UnitTest
 {
     [TestClass]
     public class DevCockpitRunTest

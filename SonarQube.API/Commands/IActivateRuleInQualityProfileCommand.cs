@@ -1,7 +1,7 @@
-﻿using PeterSoft.SonarQubeConnector.API.Logic;
-using PeterSoft.SonarQubeConnector.Infrastructure.Commands;
+﻿using PeterSoft.SonarQube.Connector.API.Logic;
+using PeterSoft.SonarQube.Connector.Infrastructure.Commands;
 
-namespace PeterSoft.SonarQubeConnector.Commands
+namespace PeterSoft.SonarQube.Connector.Commands
 {
     public interface IActivateRuleInQualityProfileCommand : ICommand
     {

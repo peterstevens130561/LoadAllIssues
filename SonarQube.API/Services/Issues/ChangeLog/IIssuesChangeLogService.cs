@@ -1,11 +1,11 @@
-﻿using PeterSoft.SonarQubeConnector.Models;
+﻿using PeterSoft.SonarQube.Connector.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PeterSoft.SonarQubeConnector.Services
+namespace PeterSoft.SonarQube.Connector.Services
 {
     public interface IIssuesChangelogService : IExecuteService<IList<Changelog>>
     {

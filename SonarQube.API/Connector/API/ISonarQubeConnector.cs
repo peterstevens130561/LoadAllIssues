@@ -1,5 +1,5 @@
 ﻿
-namespace PeterSoft.SonarQubeConnector
+namespace PeterSoft.SonarQube.Connector
 {
     public interface ISonarQubeConnector
     {

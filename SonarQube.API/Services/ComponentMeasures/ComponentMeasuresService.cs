@@ -1,10 +1,10 @@
 ﻿
-using PeterSoft.SonarQubeConnector.API.Logic;
-using PeterSoft.SonarQubeConnector.Models;
-using PeterSoft.SonarQubeConnector.Services;
+using PeterSoft.SonarQube.Connector.API.Logic;
+using PeterSoft.SonarQube.Connector.Models;
+using PeterSoft.SonarQube.Connector.Services;
 using System;
 
-namespace PeterSoft.SonarQubeConnector.Services
+namespace PeterSoft.SonarQube.Connector.Services
 {
      internal class ComponentMeasuresService :  ServiceBase<ComponentMeasures> , IComponentMeasuresService
     {

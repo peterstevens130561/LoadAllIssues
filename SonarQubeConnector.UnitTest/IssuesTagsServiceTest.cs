@@ -1,11 +1,11 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using PeterSoft.SonarQubeConnector.Services;
-using PeterSoft.SonarQubeConnector.API.Logic;
+using PeterSoft.SonarQube.Connector.Services;
+using PeterSoft.SonarQube.Connector.API.Logic;
 using System.Collections.Generic;
 using Moq;
 
-namespace SonarQubeConnector.UnitTest
+namespace Connector.UnitTest
 {
     [TestClass]
     public class IssuesTagsServiceTest : ServiceTestBase<IIssuesTagsService>

@@ -1,17 +1,17 @@
 ﻿
-using PeterSoft.SonarQubeConnector.Services;
+using PeterSoft.SonarQube.Connector.Services;
 
-using PeterSoft.SonarQubeConnector.API.Logic;
+using PeterSoft.SonarQube.Connector.API.Logic;
 using System.Net;
-using PeterSoft.SonarQubeConnector.Infrastructure.Commands;
+using PeterSoft.SonarQube.Connector.Infrastructure.Commands;
 
-using PeterSoft.SonarQubeConnector.Commands;
-using PeterSoft.SonarQubeConnector.CommandHandlers;
-using PeterSoft.SonarQubeConnector.Infrastructure.Services;
-using PeterSoft.SonarQubeConnector.Handlers;
-using PeterSoft.SonarQubeConnector.Services.Issues;
+using PeterSoft.SonarQube.Connector.Commands;
+using PeterSoft.SonarQube.Connector.CommandHandlers;
+using PeterSoft.SonarQube.Connector.Infrastructure.Services;
+using PeterSoft.SonarQube.Connector.Handlers;
+using PeterSoft.SonarQube.Connector.Services.Issues;
 
-namespace PeterSoft.SonarQubeConnector
+namespace PeterSoft.SonarQube.Connector
 {
     /// <summary>
     /// The connector is the one and only dependency that clients need to use.

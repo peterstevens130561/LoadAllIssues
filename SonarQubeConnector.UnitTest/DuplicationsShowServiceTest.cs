@@ -1,7 +1,8 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using PeterSoft.SonarQube.Connector.Services;
 
-namespace SonarQubeConnector.UnitTest
+namespace Connector.UnitTest
 {
     [TestClass]
     public class DuplicationsShowServiceTest : ServiceTestBase<IDuplicationsShowService>
@@ -69,7 +70,7 @@ namespace SonarQubeConnector.UnitTest
         {
             var service = createService();
             var chain = service.SetFileKey("myfile");
-            AssertSame(service, chain);
+            Assert.AreSame(service, chain);
             chain=service.SetUUID("myuuid");
         }
 

@@ -1,4 +1,4 @@
-﻿namespace PeterSoft.SonarQubeConnector.Services
+﻿namespace PeterSoft.SonarQube.Connector.Services
 {
     public interface IService
     {

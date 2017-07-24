@@ -1,12 +1,12 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
-using PeterSoft.SonarQubeConnector.API.Logic;
-using PeterSoft.SonarQubeConnector.Services;
-using PeterSoft.SonarQubeConnector.Models;
+using PeterSoft.SonarQube.Connector.API.Logic;
+using PeterSoft.SonarQube.Connector.Services;
+using PeterSoft.SonarQube.Connector.Models;
 using System.Collections.Generic;
 
-namespace SonarQubeConnector.UnitTest
+namespace Connector.UnitTest
 {
     [TestClass]
     public class SourcesScmServiceTest : ServiceTestBase<ISourcesScmService>

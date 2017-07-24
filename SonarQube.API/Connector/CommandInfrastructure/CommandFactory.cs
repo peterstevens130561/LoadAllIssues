@@ -1,9 +1,9 @@
 ﻿
-using PeterSoft.SonarQubeConnector.API.Logic;
+using PeterSoft.SonarQube.Connector.API.Logic;
 using System;
 using System.Collections.Generic;
 
-namespace PeterSoft.SonarQubeConnector.Infrastructure.Commands
+namespace PeterSoft.SonarQube.Connector.Infrastructure.Commands
 {
     class CommandFactory : ICommandFactory
     {

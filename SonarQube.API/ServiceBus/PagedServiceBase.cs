@@ -1,9 +1,9 @@
 ﻿
 using System.Collections.Generic;
-using PeterSoft.SonarQubeConnector.API.Logic;
+using PeterSoft.SonarQube.Connector.API.Logic;
 using System;
 
-namespace PeterSoft.SonarQubeConnector.Services
+namespace PeterSoft.SonarQube.Connector.Services
 {
     /// <summary>
     /// Gets all pages for the path specified in the constructor in list of which elements have

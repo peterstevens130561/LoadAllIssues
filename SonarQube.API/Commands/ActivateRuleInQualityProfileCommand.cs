@@ -1,12 +1,12 @@
-﻿using PeterSoft.SonarQubeConnector.API.Logic;
-using PeterSoft.SonarQubeConnector.Client;
+﻿using PeterSoft.SonarQube.Connector.API.Logic;
+using PeterSoft.SonarQube.Connector.Client;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PeterSoft.SonarQubeConnector.Commands
+namespace PeterSoft.SonarQube.Connector.Commands
 {
     public class ActivateRuleInQualityProfileCommand : ParametersBase, IActivateRuleInQualityProfileCommand
     {

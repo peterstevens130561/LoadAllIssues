@@ -1,13 +1,13 @@
-﻿using PeterSoft.SonarQubeConnector.API.Logic;
-using PeterSoft.SonarQubeConnector.Commands;
-using PeterSoft.SonarQubeConnector.Infrastructure.Commands;
+﻿using PeterSoft.SonarQube.Connector.API.Logic;
+using PeterSoft.SonarQube.Connector.Commands;
+using PeterSoft.SonarQube.Connector.Infrastructure.Commands;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PeterSoft.SonarQubeConnector.CommandHandlers
+namespace PeterSoft.SonarQube.Connector.CommandHandlers
 {
     internal class IssueAssignCommandHandler : ICommandHandler<IssueAssignCommand>
     {

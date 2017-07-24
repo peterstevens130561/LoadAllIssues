@@ -1,12 +1,12 @@
-﻿using PeterSoft.SonarQubeConnector.Models;
-using PeterSoft.SonarQubeConnector.Services;
+﻿using PeterSoft.SonarQube.Connector.Models;
+using PeterSoft.SonarQube.Connector.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PeterSoft.SonarQubeConnector.Services
+namespace PeterSoft.SonarQube.Connector.Services
 {
     /// <summary>
     /// see web_api/api/issues

@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Text;
 using System.IO;
-using PeterSoft.SonarQubeConnector.API.Utilities;
-using PeterSoft.SonarQubeConnector.Services;
-using PeterSoft.SonarQubeConnector.Models;
-using PeterSoft.SonarQubeConnector;
+using PeterSoft.SonarQube.Connector.API.Utilities;
+using PeterSoft.SonarQube.Connector.Services;
+using PeterSoft.SonarQube.Connector.Models;
+using PeterSoft.SonarQube.Connector;
 
 namespace LoadAllIssues
 {

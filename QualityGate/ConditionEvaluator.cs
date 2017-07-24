@@ -1,8 +1,8 @@
 ﻿using System;
-using PeterSoft.SonarQubeConnector.Models;
+using PeterSoft.SonarQube.Connector.Models;
 using System.Collections.Generic;
 
-namespace PeterSoft.SonarQubeConnector.Application
+namespace PeterSoft.SonarQube.Connector.Application
 {
     public class ConditionEvaluator
     {

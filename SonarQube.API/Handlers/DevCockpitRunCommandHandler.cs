@@ -1,11 +1,11 @@
-﻿using PeterSoft.SonarQubeConnector.API.Logic;
-using PeterSoft.SonarQubeConnector.Commands;
-using PeterSoft.SonarQubeConnector.Infrastructure.Commands;
-using PeterSoft.SonarQubeConnector.Models;
+﻿using PeterSoft.SonarQube.Connector.API.Logic;
+using PeterSoft.SonarQube.Connector.Commands;
+using PeterSoft.SonarQube.Connector.Infrastructure.Commands;
+using PeterSoft.SonarQube.Connector.Models;
 using System.Collections.Generic;
 
 
-namespace PeterSoft.SonarQubeConnector.CommandHandlers
+namespace PeterSoft.SonarQube.Connector.CommandHandlers
 {
     internal class DevCockpitRunCommandHandler : ICommandHandler<IDevCockpitRunCommand>
     {

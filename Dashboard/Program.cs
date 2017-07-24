@@ -1,6 +1,6 @@
-﻿using PeterSoft.SonarQubeConnector;
-using PeterSoft.SonarQubeConnector.API.Logic;
-using PeterSoft.SonarQubeConnector.Services;
+﻿using PeterSoft.SonarQube.Connector;
+using PeterSoft.SonarQube.Connector.API.Logic;
+using PeterSoft.SonarQube.Connector.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;

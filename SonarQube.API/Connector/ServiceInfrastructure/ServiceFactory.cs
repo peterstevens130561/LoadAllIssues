@@ -1,10 +1,10 @@
-﻿using PeterSoft.SonarQubeConnector.API.Logic;
-using PeterSoft.SonarQubeConnector.Services;
+﻿using PeterSoft.SonarQube.Connector.API.Logic;
+using PeterSoft.SonarQube.Connector.Services;
 using System;
 using System.Collections.Generic;
 
 
-namespace PeterSoft.SonarQubeConnector.Infrastructure.Services
+namespace PeterSoft.SonarQube.Connector.Infrastructure.Services
 {
     internal class ServiceFactory : IServiceFactory
     {

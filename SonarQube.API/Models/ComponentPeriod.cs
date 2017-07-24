@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace PeterSoft.SonarQubeConnector.Models
+namespace PeterSoft.SonarQube.Connector.Models
 {
     public class ComponentPeriod
     {

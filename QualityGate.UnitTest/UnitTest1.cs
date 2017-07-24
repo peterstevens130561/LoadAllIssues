@@ -1,11 +1,11 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using PeterSoft.SonarQubeConnector.Models;
-using PeterSoft.SonarQubeConnector.Services;
+using PeterSoft.SonarQube.Connector.Models;
+using PeterSoft.SonarQube.Connector.Services;
 using Moq;
 using System.Collections.Generic;
 
-namespace PeterSoft.SonarQubeConnector.Application
+namespace PeterSoft.SonarQube.Connector.Application
 {
     [TestClass]
     public class UnitTest1

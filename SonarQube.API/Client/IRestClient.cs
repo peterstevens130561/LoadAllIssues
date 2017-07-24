@@ -1,4 +1,4 @@
-﻿namespace PeterSoft.SonarQubeConnector.API.Logic
+﻿namespace PeterSoft.SonarQube.Connector.API.Logic
 {
     /// <summary>
     /// Crude client, support Get and Post. 
