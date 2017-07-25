@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>SonarQubeConnector</title>
+    <authors>$author$</authors>
+    <owners>Peter Stevens</owners>
+    <projectUrl>https://github.com/peterstevens130561/LoadAllIssues</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>$description$</description>
+    <releaseNotes>US004 Support for NuGet</releaseNotes>
+    <copyright>Copyright 2017</copyright>
+    <tags></tags>
+  </metadata>
+</package>
