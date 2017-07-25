@@ -38,7 +38,7 @@ namespace LoadAllIssues
             foreach (Project project in projects)
             {
                 var issuesSearchService = session.CreateService<IIssuesSearchService>();
-                var issues=issuesSearchService.SetStatuses(@"OPEN,REOPENED").SetProjectKeys(project.K).Execute();
+                var issues=issuesSearchService.SetStatuses(@"OPEN,REOPENED").SetSeverities(@"BLOCKER,CRITICAL").SetProjectKeys(project.K).Execute();
                 foreach (var issue in issues)
                 {
                     if (!listedRules.Contains(issue.Rule)) {
@@ -51,7 +51,7 @@ namespace LoadAllIssues
                 }
 
             }
-            File.WriteAllText(@"issues.csv", sb.ToString());
+             File.WriteAllText(@"issues.csv", sb.ToString());
 
         }
     }

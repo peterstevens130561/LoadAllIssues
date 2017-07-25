@@ -1,13 +1,5 @@
 ﻿using PeterSoft.SonarQube.Connector;
-using PeterSoft.SonarQube.Connector.API.Logic;
 using PeterSoft.SonarQube.Connector.Services;
-using PeterSoft.SonarQube.Connector.Infrastructure.Services;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ExtractProjectIssues
 {

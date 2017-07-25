@@ -35,11 +35,9 @@
     <CodeAnalysisRuleSet>ExtractProjectIssues.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="SonarQube.API">
-      <HintPath>..\SonarQube.API\bin\Debug\SonarQube.API.dll</HintPath>
-    </Reference>
-    <Reference Include="SonarQubeConnector">
-      <HintPath>..\SonarQube.API\bin\Debug\SonarQubeConnector.dll</HintPath>
+    <Reference Include="SonarQubeConnector, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SonarQubeConnector.1.0.0.0\lib\net452\SonarQubeConnector.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

@@ -243,3 +243,4 @@ ModelManifest.xml
 *.dll
 /.sonarqube
 *.dgml
+/SonarQube.API/SonarQubeConnector.1.0.0.0.zip
