@@ -10,7 +10,7 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>
     <releaseNotes>US004 Support for NuGet</releaseNotes>
-    <copyright>Copyright 2017</copyright>
+    <copyright>Copyright Peter Stevens 2017</copyright>
     <tags></tags>
   </metadata>
 </package>

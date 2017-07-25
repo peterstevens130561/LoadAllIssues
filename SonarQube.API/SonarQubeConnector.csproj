@@ -7,7 +7,7 @@
     <ProjectGuid>{9CCD2B62-3DC0-463A-B146-EC5F1FE84AEA}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>PeterSoft.SonarQubeConnector</RootNamespace>
+    <RootNamespace>PeterSoft.SonarQube.Connector</RootNamespace>
     <AssemblyName>SonarQubeConnector</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -174,6 +174,10 @@
     <Folder Include="Services\Rules\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>cd $(ProjectDir)
+nuget pack</PostBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

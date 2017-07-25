@@ -3,9 +3,9 @@ using System.Text;
 using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using PeterSoft.SonarQube.Connector;
-using PeterSoft.SonarQube.Connector.Services;
-using PeterSoft.SonarQube.Connector.API.Logic;
 using Moq;
+using PeterSoft.SonarQube.Connector.API.Logic;
+using PeterSoft.SonarQube.Connector.Services;
 
 namespace Connector.UnitTest
 {

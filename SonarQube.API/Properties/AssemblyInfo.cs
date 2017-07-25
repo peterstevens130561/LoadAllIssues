@@ -8,11 +8,12 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("SonarQubeConnector")]
 [assembly: AssemblyDescription("A simple REST connector to SonarQube")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Baker Hughes Incorporated")]
+[assembly: AssemblyCompany("Peter Stevens")]
 [assembly: AssemblyProduct("SonarQubeConnector")]
-[assembly: AssemblyCopyright("Copyright © Baker Hughes Incorporated 2016")]
+[assembly: AssemblyCopyright("Copyright © Peter Stevens 2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
+
 
 // Setting ComVisible to false makes the types in this assembly not visible 
 // to COM components.  If you need to access a type in this assembly from 
@@ -34,6 +35,7 @@ using System.Runtime.InteropServices;
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]
+[assembly: AssemblyInformationalVersion("1.0.0-SNAPSHOT")]
 [assembly: InternalsVisibleTo("SonarQubeConnector.UnitTest")]
 [assembly: InternalsVisibleTo("InternalsVisible.DynamicProxyGenAssembly2")]
 [assembly: InternalsVisibleTo("DynamicProxyGenAssembly2")]

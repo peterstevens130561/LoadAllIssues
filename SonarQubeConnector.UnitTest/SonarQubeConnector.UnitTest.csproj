@@ -78,6 +78,16 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\QualityGate\QualityGate.csproj">
+      <Project>{62badaac-8e96-4502-a4e3-fc9bb28dc5b1}</Project>
+      <Name>QualityGate</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SonarQube.API\SonarQubeConnector.csproj">
+      <Project>{9CCD2B62-3DC0-463A-B146-EC5F1FE84AEA}</Project>
+      <Name>SonarQubeConnector</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>
