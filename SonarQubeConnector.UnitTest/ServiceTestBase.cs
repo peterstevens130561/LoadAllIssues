@@ -1,14 +1,9 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Moq;
 using PeterSoft.SonarQube.Connector.API.Logic;
 using PeterSoft.SonarQube.Connector.Services;
 
-namespace Connector.UnitTest
+namespace PeterSoft.SonarQube.Connector.UnitTest
 {
     /// <summary>
     /// Base testset for Services.
@@ -33,13 +28,13 @@ namespace Connector.UnitTest
         public abstract void ParametersTest();
 
         /// <summary>
-        /// Helper method to create service
+        /// Helper method to create service. The must have been implemented, and registered
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
         protected T createService()
         {
-            var connector = new PeterSoft.SonarQube.Connector.SonarQubeConnector();
+            var connector = new SonarQubeConnector();
             var session = connector.CreateSession();
             return session.CreateService<T>(clientMock.Object,restParametersMock.Object);
         }

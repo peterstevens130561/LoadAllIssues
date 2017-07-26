@@ -1,4 +1,4 @@
-﻿namespace Connector.UnitTest
+﻿namespace PeterSoft.SonarQube.Connector.UnitTest
 {
      public interface IServiceTest
     {

@@ -6,7 +6,7 @@ using PeterSoft.SonarQube.Connector.Services;
 using System.Collections.Generic;
 using PeterSoft.SonarQube.Connector.Models;
 
-namespace Connector.UnitTest
+namespace PeterSoft.SonarQube.Connector.UnitTest
 {
     [TestClass]
     public class IssuesAuthorsServiceTest : ServiceTestBase<IIssuesAuthorsService>

@@ -85,6 +85,8 @@
     <Compile Include="Models\Changelog.cs" />
     <Compile Include="Models\Commit.cs" />
     <Compile Include="Models\Diff.cs" />
+    <Compile Include="Models\PermissionTemplates.cs" />
+    <Compile Include="Models\PluginsAvailable.cs" />
     <Compile Include="Models\Profile.cs" />
     <Compile Include="Models\ProfilesResponse.cs" />
     <Compile Include="Services\IDuplicationsShowService.cs" />
@@ -134,6 +136,10 @@
     <Compile Include="ServiceBus\IPagedService.cs" />
     <Compile Include="Services\ComponentMeasures\ComponentMeasuresService.cs" />
     <Compile Include="Services\ComponentMeasures\IComponentMeasureService.cs" />
+    <Compile Include="Services\Permissions\IPermissionsSearchTemplateService.cs" />
+    <Compile Include="Services\Permissions\PermissionsSearchTemplateService.cs" />
+    <Compile Include="Services\Plugins\IPluginsAvailableService.cs" />
+    <Compile Include="Services\Plugins\PluginsAvailableService.cs" />
     <Compile Include="Services\QualityProfilesSearch\IQualityProfilesSearchService.cs" />
     <Compile Include="Services\QualityProfilesSearch\QualityProfilesSearchService.cs" />
     <Compile Include="Services\Resources\IResourcesService.cs" />
@@ -175,8 +181,8 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>cd $(ProjectDir)
-nuget pack</PostBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

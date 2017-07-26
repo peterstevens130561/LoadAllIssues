@@ -6,7 +6,7 @@ using PeterSoft.SonarQube.Connector.Services;
 using PeterSoft.SonarQube.Connector.Models;
 using System.Collections.Generic;
 
-namespace Connector.UnitTest
+namespace PeterSoft.SonarQube.Connector.UnitTest
 {
     [TestClass]
     public class SourcesScmServiceTest : ServiceTestBase<ISourcesScmService>

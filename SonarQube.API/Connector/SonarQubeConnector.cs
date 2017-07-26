@@ -74,7 +74,10 @@ namespace PeterSoft.SonarQube.Connector
             .Register<IIssuesTagsService,IssuesTagsService>()
             .Register<IIssuesTransitionsService,IssuesTransitionsService>()
             .Register<IIssuesChangelogService, IssuesChangelogService>()
-            .Register<ISourcesScmService,SourcesScmService>();
+            .Register<IPermissionsSearchTemplateService, PermissionsSearchTemplateService>()
+            .Register<IPluginsAvailableService,PluginsAvailableService>()
+            .Register<ISourcesScmService,SourcesScmService>()
+            ;
         }
 
     }

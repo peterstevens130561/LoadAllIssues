@@ -5,7 +5,7 @@ using Moq;
 using System.Collections.Generic;
 using PeterSoft.SonarQube.Connector.API.Logic;
 
-namespace Connector.UnitTest
+namespace PeterSoft.SonarQube.Connector.UnitTest
 {
     [TestClass]
     public class IssuesTransitionsServiceTest : ServiceTestBase<IIssuesTransitionsService>

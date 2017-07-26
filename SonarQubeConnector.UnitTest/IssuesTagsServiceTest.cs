@@ -5,7 +5,7 @@ using PeterSoft.SonarQube.Connector.API.Logic;
 using System.Collections.Generic;
 using Moq;
 
-namespace Connector.UnitTest
+namespace PeterSoft.SonarQube.Connector.UnitTest
 {
     [TestClass]
     public class IssuesTagsServiceTest : ServiceTestBase<IIssuesTagsService>

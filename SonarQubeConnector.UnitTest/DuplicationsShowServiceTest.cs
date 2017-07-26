@@ -2,7 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using PeterSoft.SonarQube.Connector.Services;
 
-namespace Connector.UnitTest
+namespace PeterSoft.SonarQube.Connector.UnitTest
 {
     [TestClass]
     public class DuplicationsShowServiceTest : ServiceTestBase<IDuplicationsShowService>
