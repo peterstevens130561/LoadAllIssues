@@ -47,6 +47,9 @@ namespace PeterSoft.SonarQube.Connector
             commandBus.Register<IssueAssignCommand, IssueAssignCommandHandler>();
             commandBus.Register<IActivateRuleInQualityProfileCommand, ActivateRuleInQualityProfileCommandHandler>();
             commandBus.Register<IDevCockpitRunCommand, DevCockpitRunCommandHandler>();
+            commandBus.Register<IPermissionsApplyTemplateCommand, PermissionsApplyTemplateCommandHandler>();
+            commandBus.Register<IPermissionsBulkApplyTemplateCommand, PermissionsBulkApplyTemplateCommandHandler>();
+            commandBus.Register<IPermissionsCreateTemplateCommand, PermissionsCreateTemplateCommandHandler>();
         }
 
         private void RegisterCommands()
@@ -54,6 +57,9 @@ namespace PeterSoft.SonarQube.Connector
             commandFactory.Register<IIssueAssignCommand, IssueAssignCommand>();
             commandFactory.Register<IDevCockpitRunCommand, DevCockpitRunCommand>();
             commandFactory.Register<IActivateRuleInQualityProfileCommand, ActivateRuleInQualityProfileCommand>();
+            commandFactory.Register<IPermissionsApplyTemplateCommand, PermissionsApplyTemplateCommand>();
+            commandFactory.Register<IPermissionsBulkApplyTemplateCommand, PermissionsBulkApplyTemplateCommand>();
+            commandFactory.Register<IPermissionsCreateTemplateCommand, PermissionsCreateTemplateCommand>();
         }
 
         public ISession CreateSession()
