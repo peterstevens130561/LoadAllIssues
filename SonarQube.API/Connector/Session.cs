@@ -3,6 +3,9 @@ using System;
 using PeterSoft.SonarQube.Connector.Client;
 using PeterSoft.SonarQube.Connector.Commands;
 using PeterSoft.SonarQube.Connector.Services;
+using PeterSoft.SonarQube.Connector.Services.Factory;
+using PeterSoft.SonarQube.Connector.Commands.Bus;
+using PeterSoft.SonarQube.Connector.Commands.Factory;
 
 namespace PeterSoft.SonarQube.Connector
 {

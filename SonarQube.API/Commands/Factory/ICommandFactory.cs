@@ -3,7 +3,7 @@
 using PeterSoft.SonarQube.Connector.Client;
 
 
-namespace PeterSoft.SonarQube.Connector.Commands
+namespace PeterSoft.SonarQube.Connector.Commands.Factory
 {
     internal interface ICommandFactory
     {

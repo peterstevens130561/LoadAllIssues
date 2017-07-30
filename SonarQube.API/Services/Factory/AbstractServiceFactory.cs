@@ -1,16 +1,15 @@
 ﻿using PeterSoft.SonarQube.Connector.Client;
-using PeterSoft.SonarQube.Connector.Services;
 using System;
 using System.Collections.Generic;
 
 
-namespace PeterSoft.SonarQube.Services
+namespace PeterSoft.SonarQube.Connector.Services.Factory
 {
-    internal class ServiceFactory : IServiceFactory
+    internal abstract class AbstractServiceFactory : IServiceFactory
     {
         private readonly RestClient restGetter;
         private readonly Dictionary<Type,Type> servicesMap = new Dictionary<Type,Type>();
-        public ServiceFactory(RestClient restGetter)
+        public AbstractServiceFactory(RestClient restGetter)
         {
             this.restGetter = restGetter;
         }

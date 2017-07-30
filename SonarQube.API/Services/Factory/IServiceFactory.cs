@@ -1,7 +1,6 @@
 ﻿using PeterSoft.SonarQube.Connector.Client;
-using PeterSoft.SonarQube.Connector.Services;
 
-namespace PeterSoft.SonarQube.Connector.Services
+namespace PeterSoft.SonarQube.Connector.Services.Factory
 {
     public interface IServiceFactory
     {
