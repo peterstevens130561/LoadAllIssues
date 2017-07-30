@@ -105,7 +105,7 @@
     <Compile Include="Models\Profile.cs" />
     <Compile Include="Models\ProfilesResponse.cs" />
     <Compile Include="Services\IDuplicationsShowService.cs" />
-    <Compile Include="Services\IMetricsSearch.cs" />
+    <Compile Include="Services\Metrics\Search\IMetricsSearchService.cs" />
     <Compile Include="Commands\DevCockpit\Run\DevCockpitRunCommand.cs" />
     <Compile Include="Commands\DevCockpit\Run\DevCockpitRunCommandHandler.cs" />
     <Compile Include="Commands\Issues\Assign\IssuesAssignCommand.cs" />
@@ -123,7 +123,7 @@
     <Compile Include="Services\Issues\Tags\IssuesTagsService.cs" />
     <Compile Include="Services\Issues\Transitions\IIssuesTransitionsService.cs" />
     <Compile Include="Services\Issues\Transitions\IssuesTransitionsService.cs" />
-    <Compile Include="Services\MetricsSearchQueryService.cs" />
+    <Compile Include="Services\Metrics\Search\MetricsSearchService.cs" />
     <Compile Include="Client\IRestClient.cs" />
     <Compile Include="Client\IRestParameters.cs" />
     <Compile Include="Services\ServiceBase.cs" />
