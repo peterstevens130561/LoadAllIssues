@@ -1,7 +1,7 @@
 ﻿
 
 using PeterSoft.SonarQube.Connector.Client;
-
+using PeterSoft.SonarQube.Connector.Commands;
 
 namespace PeterSoft.SonarQube.Connector.Commands.Factory
 {
@@ -9,13 +9,8 @@ namespace PeterSoft.SonarQube.Connector.Commands.Factory
     {
         T CreateCommand<T>(ICredentials credentials) where T : ICommand;
 
-        /// <summary>
-        /// Register a command interface and its implementation
-        /// </summary>
-        /// <typeparam name="TInferface"></typeparam>
-        /// <typeparam name="VImplementation"></typeparam>
-        /// <returns></returns>
-        ICommandFactory Register<TInferface, VImplementation>() where TInferface : ICommand where VImplementation : ICommand;
+        ICommandHandler<T> CreateHandler<T>(T command) where T : ICommand;
+
     }
 
 

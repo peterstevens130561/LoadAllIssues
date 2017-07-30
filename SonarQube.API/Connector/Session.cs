@@ -5,7 +5,6 @@ using PeterSoft.SonarQube.Connector.Commands;
 using PeterSoft.SonarQube.Connector.Services;
 using PeterSoft.SonarQube.Connector.Services.Factory;
 using PeterSoft.SonarQube.Connector.Commands.Bus;
-using PeterSoft.SonarQube.Connector.Commands.Factory;
 
 namespace PeterSoft.SonarQube.Connector
 {
@@ -13,13 +12,11 @@ namespace PeterSoft.SonarQube.Connector
     {
         private readonly IServiceFactory serviceFactory;
         private readonly ICommandBus commandBus;
-        private readonly ICommandFactory commandFactory;
         private ICredentials credentials;
 
-        public Session(IServiceFactory serviceFactory,ICommandFactory commandFactory,ICommandBus commandBus)
+        public Session(IServiceFactory serviceFactory,ICommandBus commandBus)
         {
             this.serviceFactory = serviceFactory;
-            this.commandFactory = commandFactory;
             this.commandBus = commandBus;
         }
 
@@ -43,7 +40,7 @@ namespace PeterSoft.SonarQube.Connector
         /// <returns></returns>
         public T CreateCommand<T>() where T:ICommand
         {
-            return commandFactory.CreateCommand<T>(credentials);
+            return commandBus.CreateCommand<T>(credentials);
         }
 
         /// <summary>
@@ -51,7 +48,7 @@ namespace PeterSoft.SonarQube.Connector
         /// </summary>
         public void SubmitCommand<T>(T command) where T : ICommand
         {
-            commandBus.Submit<T>(command);
+            commandBus.Execute<T>(command);
         }
 
         /// <summary>

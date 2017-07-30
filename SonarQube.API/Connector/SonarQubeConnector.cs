@@ -1,8 +1,8 @@
 ﻿
 using PeterSoft.SonarQube.Connector.Services.Factory;
 using PeterSoft.SonarQube.Connector.Client;
-using PeterSoft.SonarQube.Connector.Commands.Factory;
 using PeterSoft.SonarQube.Connector.Commands.Bus;
+using PeterSoft.SonarQube.Connector.Commands.Factory;
 
 namespace PeterSoft.SonarQube.Connector
 {
@@ -14,8 +14,7 @@ namespace PeterSoft.SonarQube.Connector
     /// </summary>
     public class SonarQubeConnector : ISonarQubeConnector
     {
-        private readonly ICommandBus commandBus;
-        private readonly ICommandFactory commandFactory;
+        private readonly CommandBus commandBus;
         private readonly RestClient restClient;
         private readonly IServiceFactory serviceFactory;
        
@@ -28,15 +27,15 @@ namespace PeterSoft.SonarQube.Connector
         {
             this.restClient = restClient;
             serviceFactory = new DefaultServiceFactory(restClient);
-            commandFactory = new DefaultCommandFactory(restClient);
-            commandBus = new DefaultCommandBus(restClient);
+            var commandFactory = new CommandFactory(restClient);
+            commandBus = new CommandBus(commandFactory);
         }
 
 
 
         public ISession CreateSession()
         {
-            return new Session(serviceFactory,commandFactory,commandBus);
+            return new Session(serviceFactory,commandBus);
         }
 
     }

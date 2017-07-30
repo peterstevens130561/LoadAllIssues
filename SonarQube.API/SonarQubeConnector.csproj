@@ -66,8 +66,8 @@
   <ItemGroup>
     <Compile Include="Client\IParameters.cs" />
     <Compile Include="Client\ParametersBase.cs" />
-    <Compile Include="Commands\Bus\ICommandHandlerFactory.cs" />
-    <Compile Include="Commands\Factory\DefaultCommandFactory.cs" />
+    <Compile Include="Commands\Bus\CommandBus.cs" />
+    <Compile Include="Commands\Bus\ICommandBus.cs" />
     <Compile Include="Commands\Implementations\Permissions\DeleteTemplate\PermissionsDeleteTemplateCommand.cs" />
     <Compile Include="Commands\Implementations\Permissions\DeleteTemplate\IPermissionsDeleteTemplateCommandHandler.cs" />
     <Compile Include="Commands\Implementations\Permissions\DeleteTemplate\IPermissionsDeleteTemplateCommand.cs" />
@@ -86,17 +86,14 @@
     <Compile Include="Commands\Implementations\Permissions\CreateTemplate\CreateTemplateCommand.cs" />
     <Compile Include="Commands\Implementations\Permissions\CreateTemplate\CreateTemplateCommandHandler.cs" />
     <Compile Include="Commands\Implementations\Permissions\CreateTemplate\ICreateTemplateCommand.cs" />
-    <Compile Include="Commands\Bus\DefaultCommandBus.cs" />
     <Compile Include="Connector\Credentials.cs" />
     <Compile Include="Client\ICredentials.cs" />
     <Compile Include="Commands\Implementations\ICustomMeasuresCreateCommand.cs" />
     <Compile Include="Commands\Implementations\Issues\Assign\IIssuesAssignCommand.cs" />
     <Compile Include="Commands\Factory\CommandFactory.cs" />
-    <Compile Include="Commands\Bus\CommandBus.cs" />
-    <Compile Include="Commands\Bus\ICommand.cs" />
-    <Compile Include="Commands\Bus\ICommandBus.cs" />
+    <Compile Include="Commands\Infrastructure\ICommand.cs" />
     <Compile Include="Commands\Factory\ICommandFactory.cs" />
-    <Compile Include="Commands\Bus\ICommandHandler.cs" />
+    <Compile Include="Commands\Infrastructure\ICommandHandler.cs" />
     <Compile Include="Commands\Implementations\Projects\Create\IProjectsCreateCommand.cs" />
     <Compile Include="Commands\Implementations\QualityProfiles\ActivateRule\QualityProfilesActivateRuleCommandHandler.cs" />
     <Compile Include="Models\Author.cs" />

@@ -1,14 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
+
+using PeterSoft.SonarQube.Connector.Client;
+using PeterSoft.SonarQube.Connector.Commands;
 
 namespace PeterSoft.SonarQube.Connector.Commands.Bus
 {
-    public interface ICommandBus
+    internal interface ICommandBus
     {
-        void Register<T1, T2>();
-        void Submit<T>(T command) where T : ICommand;
+        T CreateCommand<T>(ICredentials credentials) where T : ICommand;
+
+        void Execute<T>(T command) where T : ICommand;
+        /// <summary>
+        /// Register a command interface and its implementation
+        /// </summary>
+        /// <typeparam name="commandInterface"></typeparam>
+        /// <typeparam name="commandImplementationType"></typeparam>
+        /// <returns></returns>
     }
+
+
 }

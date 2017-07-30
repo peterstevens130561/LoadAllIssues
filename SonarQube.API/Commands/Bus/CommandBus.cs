@@ -1,53 +1,31 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using PeterSoft.SonarQube.Connector.Client;
+using PeterSoft.SonarQube.Connector.Commands.Factory;
 
-namespace PeterSoft.SonarQube.Connector.Commands.Bus {
-
-    internal class CommandBus : ICommandBus
+namespace PeterSoft.SonarQube.Connector.Commands.Bus
+{
+    class CommandBus : ICommandBus
     {
-        private readonly Dictionary<Type, Type> handlerMap = new Dictionary<Type, Type>();
-        private readonly RestClient restGetter;
-
-        public CommandBus(RestClient restGetter)
+        private readonly ICommandFactory commandFactory;
+        public CommandBus(ICommandFactory commandFactory) 
         {
-            this.restGetter = restGetter;
+            this.commandFactory = commandFactory;
+  
         }
 
-        /// <summary>
-        /// execute a command
-        /// </summary>
-        /// <typeparam name="TCommand"></typeparam>
-        /// <param name="command"></param>
-        public void Submit<TCommand>(TCommand command) where TCommand : ICommand
+        public T CreateCommand<T>(ICredentials credentials) where T : ICommand
         {
-            if (!handlerMap.ContainsKey(typeof(TCommand)))
-            {
-                throw new ArgumentException(@"unsupported type");
-            }
-            var handlerType = handlerMap[typeof(TCommand)];
-            var handler = (ICommandHandler<TCommand>)Activator.CreateInstance(handlerType,restGetter);
+            return commandFactory.CreateCommand<T>(credentials);
+        }
+
+        public void Execute<T>(T command) where T : ICommand
+        {
+            var handler = commandFactory.CreateHandler(command);
             handler.Execute(command);
         }
-
-        /// <summary>
-        /// Register command handler with the command
-        /// </summary>
-        /// <typeparam name="TCommand">command</typeparam>
-        /// <typeparam name="THandler">handler</typeparam>
-        /// <returns></returns>
-        public ICommandBus Register<TCommand, THandler>() where TCommand : ICommand where THandler : ICommandHandler<TCommand>
-        {
-            handlerMap.Add(typeof(TCommand), typeof(THandler));
-            return this;
-        }
-
-        //
-
-        void ICommandBus.Register<Tcommand, Thandler>()
-        {
-            handlerMap.Add(typeof(Tcommand), typeof(Thandler));
-        }
     }
-}
+    }
