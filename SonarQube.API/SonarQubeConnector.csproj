@@ -144,8 +144,8 @@
     <Compile Include="Models\Rule.cs" />
     <Compile Include="Models\TextRange.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Response\IPage.cs" />
-    <Compile Include="Response\Page.cs" />
+    <Compile Include="Services\IPage.cs" />
+    <Compile Include="Services\Page.cs" />
     <Compile Include="Models\RulesShow.cs" />
     <Compile Include="Connector\ServiceInfrastructure\IServiceFactory.cs" />
     <Compile Include="Services\IPagedService.cs" />
