@@ -5,7 +5,7 @@ using PeterSoft.SonarQube.Connector.Models;
 using System.Collections.Generic;
 
 
-namespace PeterSoft.SonarQube.Connector.CommandHandlers
+namespace PeterSoft.SonarQube.Connector.Commands
 {
     internal class DevCockpitRunCommandHandler : ICommandHandler<IDevCockpitRunCommand>
     {

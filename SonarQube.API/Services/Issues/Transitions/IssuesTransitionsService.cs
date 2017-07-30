@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using PeterSoft.SonarQube.Connector.API.Logic;
 
-namespace PeterSoft.SonarQube.Connector.Services.Issues
+namespace PeterSoft.SonarQube.Connector.Services
 {
     class IssuesTransitionsService : ServiceBase<IssuesTransitionsServiceResponse>, IIssuesTransitionsService
     {

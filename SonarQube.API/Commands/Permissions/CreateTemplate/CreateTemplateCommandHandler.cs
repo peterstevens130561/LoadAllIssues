@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PeterSoft.SonarQube.Connector.CommandHandlers
+namespace PeterSoft.SonarQube.Connector.Commands
 {
     internal class PermissionsCreateTemplateCommandHandler : ICommandHandler<PermissionsCreateTemplateCommand>
     {

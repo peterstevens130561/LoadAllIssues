@@ -9,19 +9,19 @@ using PeterSoft.SonarQube.Connector.Client;
 
 namespace PeterSoft.SonarQube.Connector.Commands
 {
-    public class IssueAssignCommand : ParametersBase,IIssueAssignCommand
+    public class IssuesAssignCommand : ParametersBase,IIssuesAssignCommand
     {
-        public IssueAssignCommand(IRestParameters restParameters) : base(restParameters)
+        public IssuesAssignCommand(IRestParameters restParameters) : base(restParameters)
         {
         }
 
-        public IIssueAssignCommand SetIssue(string issue) 
+        public IIssuesAssignCommand SetIssue(string issue) 
         {
             SetParameter(@"issue", issue);
             return this;
         }
 
-        public IIssueAssignCommand SetAssignee(string assignee)
+        public IIssuesAssignCommand SetAssignee(string assignee)
         {
             SetParameter(@"asignee", assignee);
             return this;

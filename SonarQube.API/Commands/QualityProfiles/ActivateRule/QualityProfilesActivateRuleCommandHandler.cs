@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PeterSoft.SonarQube.Connector.Handlers
+namespace PeterSoft.SonarQube.Connector.Commands
 {
     class ActivateRuleInQualityProfileCommandHandler : ICommandHandler<IActivateRuleInQualityProfileCommand>
     {

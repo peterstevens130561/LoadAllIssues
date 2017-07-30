@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace PeterSoft.SonarQube.Connector.Commands
 {
-    public class ActivateRuleInQualityProfileCommand : ParametersBase, IActivateRuleInQualityProfileCommand
+    public class QualityProfilesActivateRuleCommand : ParametersBase, IActivateRuleInQualityProfileCommand
     {
-        public ActivateRuleInQualityProfileCommand(IRestParameters restParameters) : base(restParameters)
+        public QualityProfilesActivateRuleCommand(IRestParameters restParameters) : base(restParameters)
         {
         }
 

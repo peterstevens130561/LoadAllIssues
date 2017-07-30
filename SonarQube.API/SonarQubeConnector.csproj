@@ -66,12 +66,15 @@
   <ItemGroup>
     <Compile Include="Client\IParameters.cs" />
     <Compile Include="Client\ParametersBase.cs" />
-    <Compile Include="Commands\ActivateRuleInQualityProfileCommand.cs" />
+    <Compile Include="Commands\Permissions\DeleteTemplate\PermissionsDeleteTemplateCommand.cs" />
+    <Compile Include="Commands\Permissions\DeleteTemplate\IPermissionsDeleteTemplateCommandHandler.cs" />
+    <Compile Include="Commands\Permissions\DeleteTemplate\IPermissionsDeleteTemplateCommand.cs" />
+    <Compile Include="Commands\QualityProfiles\ActivateRule\QualityProfilesActivateRuleCommand.cs" />
     <None Include="Commands\BlankTemplate\I_Name_Command.cs" />
     <None Include="Commands\BlankTemplate\I-Name-CommandHandler.cs" />
     <None Include="Commands\BlankTemplate\_Name_Command.cs" />
-    <Compile Include="Commands\IActivateRuleInQualityProfileCommand.cs" />
-    <Compile Include="Commands\IDevCockpitRunCommand.cs" />
+    <Compile Include="Commands\QualityProfiles\ActivateRule\IQualityProfilesActivateRuleCommand.cs" />
+    <Compile Include="Commands\DevCockpit\Run\IDevCockpitRunCommand.cs" />
     <Compile Include="Commands\Permissions\ApplyTemplate\IPermissionsApplyTemplateCommand.cs" />
     <Compile Include="Commands\Permissions\ApplyTemplate\IPermissionsApplyTemplateCommandHandler.cs" />
     <Compile Include="Commands\Permissions\ApplyTemplate\PermissionsApplyTemplateCommand.cs" />
@@ -84,15 +87,15 @@
     <Compile Include="Connector\Credentials.cs" />
     <Compile Include="Client\ICredentials.cs" />
     <Compile Include="Commands\ICustomMeasuresCreateCommand.cs" />
-    <Compile Include="Commands\IissueAssignCommand.cs" />
+    <Compile Include="Commands\Issues\Assign\IIssuesAssignCommand.cs" />
     <Compile Include="Connector\CommandInfrastructure\CommandFactory.cs" />
     <Compile Include="Connector\CommandInfrastructure\DefaultCommandBus.cs" />
     <Compile Include="Connector\CommandInfrastructure\ICommand.cs" />
     <Compile Include="Connector\CommandInfrastructure\ICommandBus.cs" />
     <Compile Include="Connector\CommandInfrastructure\ICommandFactory.cs" />
     <Compile Include="Connector\CommandInfrastructure\ICommandHandler.cs" />
-    <Compile Include="Commands\IProjectsCreateCommand.cs" />
-    <Compile Include="Handlers\ActivateRuleInQualityProfileCommandHandler.cs" />
+    <Compile Include="Commands\Projects\Create\IProjectsCreateCommand.cs" />
+    <Compile Include="Commands\QualityProfiles\ActivateRule\QualityProfilesActivateRuleCommandHandler.cs" />
     <Compile Include="Models\Author.cs" />
     <Compile Include="Models\Changelog.cs" />
     <Compile Include="Models\Commit.cs" />
@@ -103,14 +106,14 @@
     <Compile Include="Models\ProfilesResponse.cs" />
     <Compile Include="Services\IDuplicationsShowService.cs" />
     <Compile Include="Services\IMetricsSearch.cs" />
-    <Compile Include="Commands\DevCockpitRunCommand.cs" />
-    <Compile Include="Handlers\DevCockpitRunCommandHandler.cs" />
-    <Compile Include="Commands\IssueAssignCommand.cs" />
-    <Compile Include="Handlers\IssueAssignCommandHandler.cs" />
+    <Compile Include="Commands\DevCockpit\Run\DevCockpitRunCommand.cs" />
+    <Compile Include="Commands\DevCockpit\Run\DevCockpitRunCommandHandler.cs" />
+    <Compile Include="Commands\Issues\Assign\IssuesAssignCommand.cs" />
+    <Compile Include="Commands\Issues\Assign\IssueAssignCommandHandler.cs" />
     <Compile Include="Connector\API\ISonarQubeConnector.cs" />
     <Compile Include="Connector\SonarQubeConnector.cs" />
     <Compile Include="Connector\API\ISession.cs" />
-    <Compile Include="Commands\ProjectsCreateCommand.cs" />
+    <Compile Include="Commands\Projects\Create\ProjectsCreateCommand.cs" />
     <Compile Include="Services\IService.cs" />
     <Compile Include="Services\Issues\Authors\IIssuesAuthorsService.cs" />
     <Compile Include="Services\Issues\Authors\IssuesAuthorsService.cs" />
@@ -123,7 +126,7 @@
     <Compile Include="Services\MetricsSearchQueryService.cs" />
     <Compile Include="Client\IRestClient.cs" />
     <Compile Include="Client\IRestParameters.cs" />
-    <Compile Include="Client\ServiceBase.cs" />
+    <Compile Include="Services\ServiceBase.cs" />
     <Compile Include="Client\RestClient.cs" />
     <Compile Include="Client\RestParameters.cs" />
     <Compile Include="Models\ComponentMeasures.cs" />
@@ -145,7 +148,7 @@
     <Compile Include="Response\Page.cs" />
     <Compile Include="Models\RulesShow.cs" />
     <Compile Include="Connector\ServiceInfrastructure\IServiceFactory.cs" />
-    <Compile Include="ServiceBus\IPagedService.cs" />
+    <Compile Include="Services\IPagedService.cs" />
     <Compile Include="Services\ComponentMeasures\ComponentMeasuresService.cs" />
     <Compile Include="Services\ComponentMeasures\IComponentMeasureService.cs" />
     <Compile Include="Services\Permissions\IPermissionsSearchTemplateService.cs" />
@@ -164,7 +167,7 @@
     <Compile Include="Services\Resources\ResourcesService.cs" />
     <Compile Include="Services\RuleShow\RuleShowService.cs" />
     <Compile Include="Services\RuleSearch\RulesSearchService.cs" />
-    <Compile Include="ServiceBus\PagedServiceBase.cs" />
+    <Compile Include="Services\PagedServiceBase.cs" />
     <Compile Include="Connector\ServiceInfrastructure\ServiceFactory.cs" />
     <Compile Include="Connector\Session.cs" />
     <Compile Include="Services\IExecuteService.cs" />
@@ -186,8 +189,6 @@
   <ItemGroup>
     <Folder Include="API\QueryServices\" />
     <Folder Include="Connector\Interfaces\" />
-    <Folder Include="Implementations\Commands\" />
-    <Folder Include="Implementations\Services\" />
     <Folder Include="Services\IssuesSearch\" />
     <Folder Include="Services\Rules\" />
   </ItemGroup>

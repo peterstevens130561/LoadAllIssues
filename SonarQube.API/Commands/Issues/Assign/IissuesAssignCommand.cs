@@ -2,20 +2,20 @@
 
 namespace PeterSoft.SonarQube.Connector.Commands
 {
-    public interface IIssueAssignCommand : ICommand
+    public interface IIssuesAssignCommand : ICommand
     {
         /// <summary>
         /// set issue to assign assignee to (required)
         /// </summary>
         /// <param name="issue">key of issue</param>
         /// <returns></returns>
-        IIssueAssignCommand SetIssue(string issue);
+        IIssuesAssignCommand SetIssue(string issue);
         /// <summary>
         /// set assignee to assign issue to (required)
         /// </summary>
         /// <param name="assignee">user</param>
         /// <returns></returns>
-        IIssueAssignCommand SetAssignee(string assignee);
+        IIssuesAssignCommand SetAssignee(string assignee);
 
     }
 }

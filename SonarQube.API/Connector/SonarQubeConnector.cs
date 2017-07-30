@@ -6,10 +6,7 @@ using System.Net;
 using PeterSoft.SonarQube.Connector.Infrastructure.Commands;
 
 using PeterSoft.SonarQube.Connector.Commands;
-using PeterSoft.SonarQube.Connector.CommandHandlers;
 using PeterSoft.SonarQube.Connector.Infrastructure.Services;
-using PeterSoft.SonarQube.Connector.Handlers;
-using PeterSoft.SonarQube.Connector.Services.Issues;
 
 namespace PeterSoft.SonarQube.Connector
 {
@@ -44,7 +41,7 @@ namespace PeterSoft.SonarQube.Connector
 
         private void RegisterCommandHandlers()
         {
-            commandBus.Register<IssueAssignCommand, IssueAssignCommandHandler>();
+            commandBus.Register<IssuesAssignCommand, IssuesAssignCommandHandler>();
             commandBus.Register<IActivateRuleInQualityProfileCommand, ActivateRuleInQualityProfileCommandHandler>();
             commandBus.Register<IDevCockpitRunCommand, DevCockpitRunCommandHandler>();
             commandBus.Register<IPermissionsApplyTemplateCommand, PermissionsApplyTemplateCommandHandler>();
@@ -54,9 +51,9 @@ namespace PeterSoft.SonarQube.Connector
 
         private void RegisterCommands()
         {
-            commandFactory.Register<IIssueAssignCommand, IssueAssignCommand>();
+            commandFactory.Register<IIssuesAssignCommand, IssuesAssignCommand>();
             commandFactory.Register<IDevCockpitRunCommand, DevCockpitRunCommand>();
-            commandFactory.Register<IActivateRuleInQualityProfileCommand, ActivateRuleInQualityProfileCommand>();
+            commandFactory.Register<IActivateRuleInQualityProfileCommand, QualityProfilesActivateRuleCommand>();
             commandFactory.Register<IPermissionsApplyTemplateCommand, PermissionsApplyTemplateCommand>();
             commandFactory.Register<IPermissionsBulkApplyTemplateCommand, PermissionsBulkApplyTemplateCommand>();
             commandFactory.Register<IPermissionsCreateTemplateCommand, PermissionsCreateTemplateCommand>();
