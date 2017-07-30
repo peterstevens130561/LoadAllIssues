@@ -1,5 +1,5 @@
 ﻿using PeterSoft.SonarQube.Connector.Client;
-using PeterSoft.SonarQube.Connector.Infrastructure.Commands;
+using PeterSoft.SonarQube.Connector.Commands;
 using PeterSoft.SonarQube.Connector.Services;
 
 namespace PeterSoft.SonarQube.Connector

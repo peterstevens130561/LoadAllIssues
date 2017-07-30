@@ -3,7 +3,7 @@ using PeterSoft.SonarQube.Connector.Client;
 using System;
 using System.Collections.Generic;
 
-namespace PeterSoft.SonarQube.Connector.Infrastructure.Commands
+namespace PeterSoft.SonarQube.Connector.Commands
 {
     class CommandFactory : ICommandFactory
     {

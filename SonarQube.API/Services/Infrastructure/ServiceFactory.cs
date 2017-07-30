@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 
 
-namespace PeterSoft.SonarQube.Connector.Infrastructure.Services
+namespace PeterSoft.SonarQube.Services
 {
     internal class ServiceFactory : IServiceFactory
     {

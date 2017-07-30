@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using PeterSoft.SonarQube.Connector.Client;
 
-namespace PeterSoft.SonarQube.Connector.Infrastructure.Commands{
+namespace PeterSoft.SonarQube.Connector.Commands{
 
     internal class CommandBus : ICommandBus
     {
