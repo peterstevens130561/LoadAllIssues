@@ -159,14 +159,14 @@
     <Compile Include="Services\Implementations\QualityProfilesSearch\QualityProfilesSearchService.cs" />
     <Compile Include="Services\Implementations\Resources\IResourcesService.cs" />
     <Compile Include="Services\Implementations\Issues\Search\IIssuesSearchService.cs" />
-    <Compile Include="Services\Implementations\ProjectsIndex\IProjectsIndexService.cs" />
-    <Compile Include="Services\Implementations\RuleSearch\IRulesSearchService.cs" />
-    <Compile Include="Services\Implementations\RuleShow\IRulesShowService.cs" />
+    <Compile Include="Services\Implementations\ProjectsIndex\Index\IProjectsIndexService.cs" />
+    <Compile Include="Services\Implementations\Rules\Search\IRulesSearchService.cs" />
+    <Compile Include="Services\Implementations\Rules\Show\IRulesShowService.cs" />
     <Compile Include="Services\Implementations\Issues\Search\IssuesSearchService.cs" />
-    <Compile Include="Services\Implementations\ProjectsIndex\ProjectsIndexService.cs" />
+    <Compile Include="Services\Implementations\ProjectsIndex\Index\ProjectsIndexService.cs" />
     <Compile Include="Services\Implementations\Resources\ResourcesService.cs" />
-    <Compile Include="Services\Implementations\RuleShow\RuleShowService.cs" />
-    <Compile Include="Services\Implementations\RuleSearch\RulesSearchService.cs" />
+    <Compile Include="Services\Implementations\Rules\Show\RuleShowService.cs" />
+    <Compile Include="Services\Implementations\Rules\Search\RulesSearchService.cs" />
     <Compile Include="Services\Infrastructure\PagedServiceBase.cs" />
     <Compile Include="Services\Infrastructure\ServiceFactory.cs" />
     <Compile Include="Connector\Session.cs" />
@@ -189,8 +189,6 @@
   <ItemGroup>
     <Folder Include="API\QueryServices\" />
     <Folder Include="Connector\Interfaces\" />
-    <Folder Include="Services\Implementations\IssuesSearch\" />
-    <Folder Include="Services\Implementations\Rules\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
