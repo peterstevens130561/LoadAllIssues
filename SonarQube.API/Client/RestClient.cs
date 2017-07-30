@@ -7,7 +7,7 @@ using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PeterSoft.SonarQube.Connector.API.Logic {
+namespace PeterSoft.SonarQube.Connector.Client {
     internal class RestClient : IRestClient
     {
         private string url;

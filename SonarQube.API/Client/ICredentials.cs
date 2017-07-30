@@ -1,4 +1,4 @@
-﻿namespace PeterSoft.SonarQube.Connector.API.Logic
+﻿namespace PeterSoft.SonarQube.Connector.Client
 {
     public interface ICredentials
     {

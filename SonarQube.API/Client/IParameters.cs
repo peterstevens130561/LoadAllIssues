@@ -1,4 +1,4 @@
-﻿using PeterSoft.SonarQube.Connector.API.Logic;
+﻿using PeterSoft.SonarQube.Connector.Client;
 
 namespace PeterSoft.SonarQube.Connector.Client
 {

@@ -1,7 +1,7 @@
 ﻿
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
-using PeterSoft.SonarQube.Connector.API.Logic;
+using PeterSoft.SonarQube.Connector.Client;
 using PeterSoft.SonarQube.Connector.Services;
 
 namespace PeterSoft.SonarQube.Connector.UnitTest

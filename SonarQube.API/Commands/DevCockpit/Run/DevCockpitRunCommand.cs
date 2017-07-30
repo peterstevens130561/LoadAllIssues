@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using PeterSoft.SonarQube.Connector.Models;
 using PeterSoft.SonarQube.Connector.Client;
-using PeterSoft.SonarQube.Connector.API.Logic;
+using PeterSoft.SonarQube.Connector.Client;
 
 namespace PeterSoft.SonarQube.Connector.Commands
 {

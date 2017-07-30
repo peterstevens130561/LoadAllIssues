@@ -1,5 +1,5 @@
 ﻿using Newtonsoft.Json;
-using PeterSoft.SonarQube.Connector.API.Logic;
+using PeterSoft.SonarQube.Connector.Client;
 using PeterSoft.SonarQube.Connector.Client;
 using System;
 

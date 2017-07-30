@@ -1,4 +1,4 @@
-﻿using PeterSoft.SonarQube.Connector.API.Logic;
+﻿using PeterSoft.SonarQube.Connector.Client;
 using PeterSoft.SonarQube.Connector.Commands;
 using PeterSoft.SonarQube.Connector.Infrastructure.Commands;
 using System;

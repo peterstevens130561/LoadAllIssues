@@ -1,7 +1,7 @@
 ﻿using PeterSoft.SonarQube.Connector.Models;
 using System.Collections.Generic;
 
-using PeterSoft.SonarQube.Connector.API.Logic;
+using PeterSoft.SonarQube.Connector.Client;
 
 namespace PeterSoft.SonarQube.Connector.Services
 {

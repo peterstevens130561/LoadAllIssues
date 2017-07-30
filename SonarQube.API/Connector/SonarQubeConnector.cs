@@ -1,7 +1,7 @@
 ﻿
 using PeterSoft.SonarQube.Connector.Services;
 
-using PeterSoft.SonarQube.Connector.API.Logic;
+using PeterSoft.SonarQube.Connector.Client;
 using System.Net;
 using PeterSoft.SonarQube.Connector.Infrastructure.Commands;
 

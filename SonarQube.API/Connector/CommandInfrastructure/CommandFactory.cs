@@ -1,5 +1,5 @@
 ﻿
-using PeterSoft.SonarQube.Connector.API.Logic;
+using PeterSoft.SonarQube.Connector.Client;
 using System;
 using System.Collections.Generic;
 

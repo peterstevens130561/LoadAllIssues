@@ -104,7 +104,7 @@
     <Compile Include="Models\PluginsAvailable.cs" />
     <Compile Include="Models\Profile.cs" />
     <Compile Include="Models\ProfilesResponse.cs" />
-    <Compile Include="Services\IDuplicationsShowService.cs" />
+    <Compile Include="Services\Duplications\Show\IDuplicationsShowService.cs" />
     <Compile Include="Services\Metrics\Search\IMetricsSearchService.cs" />
     <Compile Include="Commands\DevCockpit\Run\DevCockpitRunCommand.cs" />
     <Compile Include="Commands\DevCockpit\Run\DevCockpitRunCommandHandler.cs" />
