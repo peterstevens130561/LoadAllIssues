@@ -110,7 +110,7 @@ string emptyResponse = @"
 
             var permissionTemplates = service.Execute();
             Assert.IsNotNull(permissionTemplates, "should be valid list");
-            Assert.AreEqual(2, permissionTemplates.permissionTemplates.Count);
+            Assert.AreEqual(3, permissionTemplates.permissionTemplates.Count);
         }
 
         [TestMethod]

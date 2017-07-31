@@ -7,7 +7,7 @@ using PeterSoft.SonarQube.Connector.Client;
 
 namespace PeterSoft.SonarQube.Connector.Services
 {
-    class IssuesTransitionsService : ServiceBase<IssuesTransitionsServiceResponse>, IIssuesTransitionsService
+    internal class IssuesTransitionsService : ServiceBase<IssuesTransitionsServiceResponse>, IIssuesTransitionsService
     {
         public IssuesTransitionsService(IRestClient restClient, IRestParameters restParameters) : base(restClient, restParameters, @"issues/transitions")
         {
