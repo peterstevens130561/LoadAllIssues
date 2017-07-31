@@ -7,7 +7,7 @@ namespace PeterSoft.SonarQube.Connector.Services
     internal class PluginsAvailableService: ServiceBase<PluginsAvailable>, IPluginsAvailableService
     {
 
-        public PluginsAvailableService(RestClient restGetter, IRestParameters parameters): base(restGetter, parameters,"plugins/available") { }
+        public PluginsAvailableService(IRestClient restGetter, IRestParameters parameters): base(restGetter, parameters,"plugins/available") { }
 
     }
 }
