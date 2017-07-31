@@ -81,6 +81,7 @@
     <Compile Include="DuplicationsShowServiceTest.cs" />
     <Compile Include="PermissionSearchTemplateServiceTest.cs" />
     <Compile Include="AbstractCommandFactoryTest.cs" />
+    <Compile Include="CommandBusTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\QualityGate\QualityGate.csproj">

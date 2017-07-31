@@ -34,7 +34,7 @@ namespace PeterSoft.SonarQube.Connector.UnitTest
             {
                 return;
             }
-            Assert.Fail("should not be created, as an ivalid interface is specified");
+            Assert.Fail("should not be created, as an invalid interface is specified");
 
         }
 
@@ -74,7 +74,7 @@ namespace PeterSoft.SonarQube.Connector.UnitTest
             return factory;
         }
 
-        class MyAbstractCommandFactory : AbstractCommandFactory
+        private class MyAbstractCommandFactory : AbstractCommandFactory
         {
             public MyAbstractCommandFactory(IRestClient restClient) : base(restClient)
             {
@@ -82,35 +82,35 @@ namespace PeterSoft.SonarQube.Connector.UnitTest
             }
         }
 
-        interface IMyCommand : ICommand
+        private interface IMyCommand : ICommand
         {
 
         }
 
-        interface ISillyCommand : ICommand
+        private interface ISillyCommand : ICommand
         {
 
         }
 
-        public class MyCommand : ParametersBase, IMyCommand
+        private class MyCommand : ParametersBase, IMyCommand
         {
             public MyCommand(IRestParameters restParameters) : base(restParameters)
             {
             }
         }
 
-        public class MySillyCommand : ParametersBase, IMyCommand
+        private class MySillyCommand : ParametersBase, IMyCommand
         {
             public MySillyCommand(IRestParameters restParameters) : base(restParameters)
             {
             }
         }
-        class MyCommandHandler : ICommandHandler<MyCommand>
+        private class MyCommandHandler : ICommandHandler<MyCommand>
         {
              public MyCommandHandler(IRestClient restClient)
         {
         }
-        void ICommandHandler<MyCommand>.Execute(MyCommand command)
+         void ICommandHandler<MyCommand>.Execute(MyCommand command)
             {
                 throw new NotImplementedException();
             }

@@ -14,17 +14,17 @@ namespace ExtractProjectIssues
             projectsService.SetKey("Transformer-Bhi.Esie.TooLink");
             var projects = projectsService.Execute();
             var issuesSearchService = session.CreateService<IIssuesSearchService>();
-            issuesSearchService.SetStatuses(@"OPEN");
+            issuesSearchService.SetStatuses(@"OPEN").SetSeverities(@"BLOCKER");
             using (var writer = new System.IO.StreamWriter("issues.csv"))
             {
-                writer.WriteLine(@"Project|Message|Component|Line|Rule|Severity|");
+                writer.WriteLine(@"Project|Message|Component|Line|Rule|Severity|Author|Since");
                 foreach (var project in projects)
                 {
                     issuesSearchService.SetProjectKeys(project.K);
                     var issues = issuesSearchService.Execute();
                     foreach (var issue in issues)
                     {
-                        writer.WriteLine(project.Nm + @"|" + issue.Message + @"|" + issue.Component + @"|" + issue.Line + @"|" + issue.Rule + @"|" + issue.Severity);
+                        writer.WriteLine(project.Nm + @"|" + issue.Message + @"|" + issue.Component + @"|" + issue.Line + @"|" + issue.Rule + @"|" + issue.Severity + @"|" + issue.Author + @"|" + issue.CreationDate);
                     }
                 }
             }

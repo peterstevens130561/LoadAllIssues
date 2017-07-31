@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
 <package >
+
   <metadata>
     <id>$id$</id>
     <version>$version$</version>
@@ -12,5 +13,8 @@
     <releaseNotes>US004 Support for NuGet</releaseNotes>
     <copyright>Copyright Peter Stevens 2017</copyright>
     <tags></tags>
+	 <dependencies>
+  <dependency id="Newtonsoft.Json" version="9.0.1" />
+</dependencies>
   </metadata>
 </package>

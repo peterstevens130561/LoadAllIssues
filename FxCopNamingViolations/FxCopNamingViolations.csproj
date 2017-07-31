@@ -38,8 +38,8 @@
     <StartupObject>FxCopNamingViolations.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="SonarQubeConnector, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\SonarQubeConnector.1.0.0-SNAPSHOT\lib\net452\SonarQubeConnector.dll</HintPath>
+    <Reference Include="SonarQubeConnector, Version=1.0.2.19664, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SonarQubeConnector.1.0.2.19664\lib\net452\SonarQubeConnector.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />

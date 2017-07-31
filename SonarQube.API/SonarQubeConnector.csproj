@@ -101,6 +101,7 @@
     <Compile Include="Models\Changelog.cs" />
     <Compile Include="Models\Commit.cs" />
     <Compile Include="Models\Diff.cs" />
+    <Compile Include="Models\Duplications.cs" />
     <Compile Include="Models\PermissionTemplates.cs" />
     <Compile Include="Models\PluginsAvailable.cs" />
     <Compile Include="Models\Profile.cs" />
@@ -182,6 +183,9 @@
     <None Include="packages.config" />
     <None Include="Service.md" />
     <None Include="SonarQube.API.ruleset" />
+    <None Include="SonarQubeConnector.nuspec">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Utilities\ServicePokaJoke.md" />
   </ItemGroup>
   <ItemGroup>
