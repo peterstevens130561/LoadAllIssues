@@ -13,22 +13,22 @@ namespace PeterSoft.SonarQube.Connector.Services
     /// 
     /// PageBase must implement 
     /// </summary>
-    /// <typeparam name="T"></typeparam>
-    /// <typeparam name="V">response type</typeparam>
-    internal class PagedServiceBase<T,V> :  IPagedService<T,V> where V : Page<T>
+    /// <typeparam name="ListItem">the type which we want in the list</typeparam>
+    /// <typeparam name="ResponsePage">response type, which holds a page</typeparam>
+    internal class PagedServiceBase<ListItem,ResponsePage> :  IPagedService<ListItem,ResponsePage> where ResponsePage : Page<ListItem>
     {
-        private readonly ServiceBase<V> restService;
-        public PagedServiceBase(IRestClient restGetter, IRestParameters restParameters,string path) : this(new ServiceBase<V>(restGetter, restParameters, path)) { }
+        private readonly ServiceBase<ResponsePage> restService;
+        public PagedServiceBase(IRestClient restGetter, IRestParameters restParameters,string path) : this(new ServiceBase<ResponsePage>(restGetter, restParameters, path)) { }
 
 
-        public PagedServiceBase(ServiceBase<V> serviceBase)
+        public PagedServiceBase(ServiceBase<ResponsePage> serviceBase)
         {
             this.restService = serviceBase;
         }
-        public IList<T> Execute()
+        public IList<ListItem> Execute()
         {
-            var items = new List<T>();
-            V response = GetItems(items);
+            var items = new List<ListItem>();
+            ResponsePage response = GetItems(items);
             int page = 0;
             while (response.Items !=null && response.Items.Count > 0)
             {
@@ -44,9 +44,9 @@ namespace PeterSoft.SonarQube.Connector.Services
         /// </summary>
         /// <param name="items"></param>
         /// <returns></returns>
-        private V GetItems(List<T> items)
+        private ResponsePage GetItems(List<ListItem> items)
         {
-            V response = restService.Execute();
+            ResponsePage response = restService.Execute();
             if (response.Items != null)
             {
                 items.AddRange(response.Items);

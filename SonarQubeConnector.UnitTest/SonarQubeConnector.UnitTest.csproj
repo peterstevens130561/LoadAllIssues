@@ -43,6 +43,10 @@
       <HintPath>..\packages\Moq.4.7.99\lib\net45\Moq.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="SonarQubeConnector, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\SonarQube.API\bin\Debug\SonarQubeConnector.dll</HintPath>
@@ -68,6 +72,7 @@
     <Compile Include="DevCockpitRunTest.cs" />
     <Compile Include="IPagedServiceTest.cs" />
     <Compile Include="IServiceTest.cs" />
+    <Compile Include="MeasuresComponentTreeTest.cs" />
     <Compile Include="PluginsAvailableServiceTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QualityProfilesSearchTest.cs" />
@@ -90,6 +95,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <Choose>

@@ -5,6 +5,7 @@ using PeterSoft.SonarQube.Connector.Models;
 using PeterSoft.SonarQube.Connector.Client;
 using PeterSoft.SonarQube.Connector.Services;
 using System;
+using Newtonsoft.Json;
 
 namespace PeterSoft.SonarQube.Connector.UnitTest
 {
@@ -139,6 +140,8 @@ string emptyResponse = @"
         {
             BaseRegistrationTest();
         }
+
+
 
     }
 }
