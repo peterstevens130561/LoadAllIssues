@@ -72,11 +72,9 @@ namespace PeterSoft.SonarQube.Connector.UnitTest
     }
   }
 }";
-        public override void DeserializationTest()
-        {
+        //empty response
+        private string emptyResponse = "{ \"duplications\":[],\"files\":{}}";
 
-
-        }
         [TestMethod]
         public override void ParametersTest()
         {
@@ -95,13 +93,22 @@ namespace PeterSoft.SonarQube.Connector.UnitTest
         }
 
         [TestMethod]
-        public void TestDeserialization()
+        public override void DeserializationTest()
         {
             var service = createService();
             clientMock.Setup(p => p.Get(It.IsAny<IRestParameters>())).Returns(response);
             var duplications = service.Execute();
             Assert.AreEqual(3, duplications.Duplications.Count);
             Assert.AreEqual(3, duplications.Files.Count);
+        }
+
+        [TestMethod]
+        public  void DeserializationTestEmpty()
+        {
+            var service = createService();
+            clientMock.Setup(p => p.Get(It.IsAny<IRestParameters>())).Returns(emptyResponse);
+            var duplications = service.Execute();
+            Assert.IsNull(duplications, "empty response should return null");
         }
     }
 }
