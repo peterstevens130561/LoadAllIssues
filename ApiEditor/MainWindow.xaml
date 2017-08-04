@@ -1,0 +1,24 @@
+﻿<Window x:Class="ApiEditor.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ApiEditor"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <Menu x:Name="menu" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="459">
+            <MenuItem Header="Parameter" Click="OnCreateParameter"/>
+            <MenuItem Header="Services">
+                <MenuItem Header="Single" HorizontalAlignment="Left" Width="145" Click="OnCreateSingleService"/>
+                <MenuItem Header="Paged" HorizontalAlignment="Left" Width="145" Click="OnCreatePagedService"/>
+            </MenuItem>
+            <MenuItem Header="Command"/>
+        </Menu>
+        <TextBox x:Name="parmeterName" HorizontalAlignment="Left" Margin="237,44,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="113" TextChanged="OnParameterChanged"/>
+        <TextBox x:Name="parameterInterface" HorizontalAlignment="Left" Height="126" Margin="45,129,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="472"/>
+        <TextBox x:Name="parameterImplementation" HorizontalAlignment="Left" Margin="45,87,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="472" Height="37"/>
+        <TextBox x:Name="operation" HorizontalAlignment="Left" Margin="45,44,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="172" TextChanged="OnParameterChanged"/>
+
+    </Grid>
+</Window>

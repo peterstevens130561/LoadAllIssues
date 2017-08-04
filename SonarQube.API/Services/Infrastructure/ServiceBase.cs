@@ -19,7 +19,13 @@ namespace PeterSoft.SonarQube.Connector.Services
         {
             restClient.SetPath(path);
             string result = restClient.Get(base.Parameters());
+            result = TransFormResponse(result);
             return JsonConvert.DeserializeObject<T>(result);
+        }
+
+        virtual protected string TransFormResponse(string response)
+        {
+            return response;
         }
 
     }

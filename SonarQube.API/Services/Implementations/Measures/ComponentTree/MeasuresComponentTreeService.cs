@@ -19,6 +19,48 @@ namespace PeterSoft.SonarQube.Connector.Services
             return this;
         }
 
+        public IMeasuresComponentTreeService SetAdditionalFields(string additionalFields)
+        {
+            SetParameter(@"additionalFields", additionalFields);
+            return this;
+        }
+
+        public IMeasuresComponentTreeService SetBaseComponentId(string baseComponentId)
+        {
+            SetParameter(@"baseComponentId", baseComponentId);
+            return this;
+        }
+
+        public IMeasuresComponentTreeService SetDeveloperId(string developerId)
+        {
+            SetParameter(@"developerId", developerId);
+            return this;
+        }
+        public IMeasuresComponentTreeService SetDeveloperKey(string developerKey)
+        {
+            SetParameter(@"developerKey", developerKey);
+            return this;
+        }
+        public IMeasuresComponentTreeService SetMetricKeys(string metricKeys)
+        {
+            SetParameter(@"metricKeys", metricKeys);
+            return this; }
+        public IMeasuresComponentTreeService SetMetricSortfilter(string metricSortFilter)
+        {
+            SetParameter("metricSortFilter", metricSortFilter);
+            return this;
+        }
+        public IMeasuresComponentTreeService SetQualifiers(string qualifiers)
+        {
+            SetParameter("qualifiers", qualifiers);
+            return this;
+        }
+        public IMeasuresComponentTreeService SetStrategy(string strategy)
+        {
+            SetParameter("strategy", strategy);
+            return this;
+        }
+
     }
 
     //TODO: Need to find a nice way to include the BaseComponent in the return. 

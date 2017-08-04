@@ -42,7 +42,9 @@ namespace PeterSoft.SonarQube.Connector.UnitTest
             Assert.AreEqual("stevpet", changelog.User);
             Assert.AreEqual("Stevens, Peter", changelog.UserName);
             Assert.AreEqual("peter.stevens@bakerhughes.com", changelog.Email);
-            Assert.AreEqual(new DateTime(2017, 1, 28, 8, 33, 9), changelog.CreationDate);
+            
+            DateTime expectedUtc = new DateTime(2017, 1, 28, 8, 33, 9, DateTimeKind.Utc);
+            Assert.AreEqual(expectedUtc, changelog.CreationDate);
             Assert.AreEqual(3, changelog.Diffs.Count);
         }
 

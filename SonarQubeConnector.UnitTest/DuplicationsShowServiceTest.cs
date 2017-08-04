@@ -1,16 +1,24 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using PeterSoft.SonarQube.Connector.Services;
+using Newtonsoft.Json;
+using PeterSoft.SonarQube.Connector.Models;
+using System.Text;
+using System.Xml;
+using System.Collections.Generic;
+using PeterSoft.SonarQube.Connector.Client;
+using Moq;
 
 namespace PeterSoft.SonarQube.Connector.UnitTest
 {
     [TestClass]
     public class DuplicationsShowServiceTest : ServiceTestBase<IDuplicationsShowService>
     {
-        public override void DeserializationTest()
-        {
-            string response = @"
-                {
+
+        // example of query 
+        //http://dftweb02:9000/api/duplications/show?key=Transformer-Bhi.Esie.TooLink:Transformer-Bhi.Esie.TooLink:2A0B26D5-85DB-4FF6-8CC0-9BFE36D4B043:Decoder/DecodingDataProvider.cs
+        //
+        string response = @"{
                 ""duplications"": [
                   {
       ""blocks"": [
@@ -64,6 +72,9 @@ namespace PeterSoft.SonarQube.Connector.UnitTest
     }
   }
 }";
+        public override void DeserializationTest()
+        {
+
 
         }
         public override void ParametersTest()
@@ -71,12 +82,22 @@ namespace PeterSoft.SonarQube.Connector.UnitTest
             var service = createService();
             var chain = service.SetFileKey("myfile");
             Assert.AreSame(service, chain);
-            chain=service.SetUUID("myuuid");
+            chain = service.SetUUID("myuuid");
         }
 
         public override void RegistrationTest()
         {
             BaseRegistrationTest();
+        }
+
+        [TestMethod]
+        public void TestDeserialization()
+        {
+            var service = createService();
+            clientMock.Setup(p => p.Get(It.IsAny<IRestParameters>())).Returns(response);
+            var duplications = service.Execute();
+            Assert.AreEqual(3, duplications.Duplications.Count);
+            Assert.AreEqual(3, duplications.Files.Count);
         }
     }
 }

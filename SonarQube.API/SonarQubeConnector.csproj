@@ -101,7 +101,7 @@
     <Compile Include="Models\Changelog.cs" />
     <Compile Include="Models\Commit.cs" />
     <Compile Include="Models\Diff.cs" />
-    <Compile Include="Models\Duplications.cs" />
+    <Compile Include="Models\Duplicates.cs" />
     <Compile Include="Models\MeasuresComponentTree.cs" />
     <Compile Include="Models\PermissionTemplates.cs" />
     <Compile Include="Models\PluginsAvailable.cs" />
@@ -109,6 +109,7 @@
     <Compile Include="Models\ProfilesResponse.cs" />
     <Compile Include="Services\Factory\DefaultServiceFactory.cs" />
     <Compile Include="Services\Implementations\Duplications\Show\IDuplicationsShowService.cs" />
+    <Compile Include="Services\Implementations\Duplications\Show\DuplicationsShowService.cs" />
     <Compile Include="Services\Implementations\Measures\ComponentTree\IMeasuresComponentTreeService.cs" />
     <Compile Include="Services\Implementations\Measures\ComponentTree\MeasuresComponentTreeService.cs" />
     <Compile Include="Services\Implementations\Metrics\Search\IMetricsSearchService.cs" />

@@ -39,31 +39,9 @@ namespace Connector.UnitTest
             Mock<IRestParameters> restParameters = new Mock<IRestParameters>();
             IMeasuresComponentTreeService service = new MeasuresComponentTreeService(client.Object, restParameters.Object);
             service.SetBaseComponentKey("key");
-
             restParameters.Verify(p => p.SetParameter(@"baseComponentKeys", @"key"));
         }
 
-
-        /// <summary>
-        /// Verify that the IssuesSearchPage is invoked, and does its work
-        /// </summary>
-
-        public void PageTest()
-        {
-            var serviceBaseMock = new Mock<ServiceBase<MeasuresComponentTreePage>>();
-
-            MeasuresComponentTreePage page1 = new MeasuresComponentTreePage();
-
-            MeasuresComponentTreePage page2 = new MeasuresComponentTreePage();
-            serviceBaseMock.SetupSequence(p => p.Execute()).Returns(page1).Returns(page2);
-            var service = new PagedServiceBase<Component, MeasuresComponentTreePage>(serviceBaseMock.Object);
-
-            // let the client return an empty page, no issues
-            var componentTree = service.Execute();
-            Assert.IsNotNull(componentTree, "there should be a valid list");
-            Assert.AreEqual(1, componentTree, "with one item");
-
-        }
 
         /// <summary>
         /// Simple test for a one pager
@@ -86,7 +64,7 @@ namespace Connector.UnitTest
         }
 
         [TestMethod]
-        public void DeserializationTestTwoPages()
+        public void PageTest()
         {
             // given we have a response with two pages, that has 2 components each
             var client = new Mock<IRestClient>();
