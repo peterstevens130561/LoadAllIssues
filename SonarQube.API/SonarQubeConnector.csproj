@@ -162,8 +162,8 @@
     <Compile Include="Services\Implementations\Permissions\PermissionsSearchTemplateService.cs" />
     <Compile Include="Services\Implementations\Plugins\IPluginsAvailableService.cs" />
     <Compile Include="Services\Implementations\Plugins\PluginsAvailableService.cs" />
-    <Compile Include="Services\Implementations\QualityProfilesSearch\IQualityProfilesSearchService.cs" />
-    <Compile Include="Services\Implementations\QualityProfilesSearch\QualityProfilesSearchService.cs" />
+    <Compile Include="Services\Implementations\QualityProfiles\Search\IQualityProfilesSearchService.cs" />
+    <Compile Include="Services\Implementations\QualityProfiles\Search\QualityProfilesSearchService.cs" />
     <Compile Include="Services\Implementations\Resources\IResourcesService.cs" />
     <Compile Include="Services\Implementations\Issues\Search\IIssuesSearchService.cs" />
     <Compile Include="Services\Implementations\ProjectsIndex\Index\IProjectsIndexService.cs" />

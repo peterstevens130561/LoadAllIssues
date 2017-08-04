@@ -39,7 +39,7 @@ namespace Connector.UnitTest
             Mock<IRestParameters> restParameters = new Mock<IRestParameters>();
             IMeasuresComponentTreeService service = new MeasuresComponentTreeService(client.Object, restParameters.Object);
             service.SetBaseComponentKey("key");
-            restParameters.Verify(p => p.SetParameter(@"baseComponentKeys", @"key"));
+            restParameters.Verify(p => p.SetParameter(@"baseComponentKey", @"key"));
         }
 
 
