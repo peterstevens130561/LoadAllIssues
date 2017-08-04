@@ -77,12 +77,16 @@ namespace PeterSoft.SonarQube.Connector.UnitTest
 
 
         }
+        [TestMethod]
         public override void ParametersTest()
         {
             var service = createService();
             var chain = service.SetFileKey("myfile");
             Assert.AreSame(service, chain);
             chain = service.SetUUID("myuuid");
+            Assert.AreSame(service, chain);
+            restParametersMock.Verify(p => p.SetParameter("fileKey", "myfile"));
+            restParametersMock.Verify(p => p.SetParameter("uuid", "myuuid"));
         }
 
         public override void RegistrationTest()
