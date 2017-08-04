@@ -87,6 +87,9 @@
     <Compile Include="Commands\Implementations\Permissions\CreateTemplate\CreateTemplateCommand.cs" />
     <Compile Include="Commands\Implementations\Permissions\CreateTemplate\CreateTemplateCommandHandler.cs" />
     <Compile Include="Commands\Implementations\Permissions\CreateTemplate\ICreateTemplateCommand.cs" />
+    <Compile Include="Commands\Implementations\QualityProfiles\SetDefault\IQualityProfilesSetDefaultCommand.cs" />
+    <Compile Include="Commands\Implementations\QualityProfiles\SetDefault\QualityProfilesSetDefaultCommand.cs" />
+    <Compile Include="Commands\Implementations\QualityProfiles\SetDefault\QualityProfilesSetDefaultCommandHandler.cs" />
     <Compile Include="Connector\Credentials.cs" />
     <Compile Include="Client\ICredentials.cs" />
     <Compile Include="Commands\Implementations\ICustomMeasuresCreateCommand.cs" />

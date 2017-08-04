@@ -17,6 +17,7 @@ namespace PeterSoft.SonarQube.Connector.Commands.Factory
             Register<IPermissionsApplyTemplateCommand, PermissionsApplyTemplateCommand, PermissionsApplyTemplateCommandHandler>();
             Register<IPermissionsBulkApplyTemplateCommand, PermissionsBulkApplyTemplateCommand, PermissionsBulkApplyTemplateCommandHandler>();
             Register<IPermissionsCreateTemplateCommand, PermissionsCreateTemplateCommand, PermissionsCreateTemplateCommandHandler>();
+            Register<IQualityProfilesSetDefaultCommand, QualityProfilesSetDefaultCommand, QualityProfilesSetDefaultCommandHandler>();
         }
   
     }
