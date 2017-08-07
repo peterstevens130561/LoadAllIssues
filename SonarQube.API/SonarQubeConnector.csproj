@@ -87,6 +87,9 @@
     <Compile Include="Commands\Implementations\Permissions\CreateTemplate\CreateTemplateCommand.cs" />
     <Compile Include="Commands\Implementations\Permissions\CreateTemplate\CreateTemplateCommandHandler.cs" />
     <Compile Include="Commands\Implementations\Permissions\CreateTemplate\ICreateTemplateCommand.cs" />
+    <Compile Include="Commands\Implementations\QualityProfiles\Rename\QualityProfilesRenameCommand.cs" />
+    <Compile Include="Commands\Implementations\QualityProfiles\Rename\IQualityProfilesRenameCommandHandler.cs" />
+    <Compile Include="Commands\Implementations\QualityProfiles\Rename\IQualityProfilesRenameCommand.cs" />
     <Compile Include="Commands\Implementations\QualityProfiles\SetDefault\IQualityProfilesSetDefaultCommand.cs" />
     <Compile Include="Commands\Implementations\QualityProfiles\SetDefault\QualityProfilesSetDefaultCommand.cs" />
     <Compile Include="Commands\Implementations\QualityProfiles\SetDefault\QualityProfilesSetDefaultCommandHandler.cs" />
