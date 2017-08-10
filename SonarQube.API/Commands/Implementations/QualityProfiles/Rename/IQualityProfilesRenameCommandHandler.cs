@@ -1,6 +1,5 @@
 ﻿using PeterSoft.SonarQube.Connector.Client;
 using PeterSoft.SonarQube.Connector.Commands;
-using PeterSoft.SonarQube.Connector.Infrastructure.Commands;
 using System;
 using System.Collections.Generic;
 using System.Linq;

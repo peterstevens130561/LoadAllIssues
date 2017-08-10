@@ -61,4 +61,37 @@ we look for a Profile object.
 Create a sam
 
 #Create a paged Service
-SonarQube has several pages services. Each response starts
+SonarQube has several paged services. A paged service extends PagedServiceBase. For an example below
+The PagedServiceBase has two parameters: the type of which the service will return an IList, and the type to which the response will be deserialized.
+
+````
+   internal class IssuesSearchService : PagedServiceBase<Issue, IssuesSearchPage>, IIssuesSearchService
+    {
+        public IssuesSearchService(IRestClient restGetter,IRestParameters parameters) : base(restGetter, parameters, "issues/search") { }  
+````
+SonarQube has various implementations of the page in the response. However, in the POST request all we need to do is specify the page. via the p parameter,
+so the information is ignored. You do not have to worry about it. 
+
+In order to extract the items that will be returned into the list, you need to implement the 'Page' class
+
+The naming convention is to use the name of the service, extended with 'Page', and it extends the Page base class
+The extension contains two critical elements
+
+1. The list of the class that we're interested in. The received json is serialized into this one
+2. The Items method, which takes the list in one. 
+
+This approach allows a generic approach to map the page to service
+````
+    public class MeasuresComponentTreePage : Page<Component>
+    {
+
+        public IList<Component> Components { get; set; }
+        public override IList<Component> Items
+        {
+            get
+            {
+                return Components;
+            }
+        }
+    }
+````

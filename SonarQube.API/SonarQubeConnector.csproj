@@ -106,6 +106,7 @@
     <Compile Include="Models\Author.cs" />
     <Compile Include="Models\Changelog.cs" />
     <Compile Include="Models\Commit.cs" />
+    <Compile Include="Models\CustomMeasuresPage.cs" />
     <Compile Include="Models\Diff.cs" />
     <Compile Include="Models\Duplicates.cs" />
     <Compile Include="Models\MeasuresComponentTree.cs" />

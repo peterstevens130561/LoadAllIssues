@@ -68,8 +68,6 @@ namespace PeterSoft.SonarQube.Connector.Services
     {
 
         public IList<Component> Components { get; set; }
-        public BaseComponent BaseComponent { get; set; }
-
         public override IList<Component> Items
         {
             get
