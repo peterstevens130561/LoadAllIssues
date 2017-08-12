@@ -27,7 +27,7 @@ namespace PeterSoft.SonarQube.Connector.Services.Factory
             .Register<ISourcesScmService, SourcesScmService>()
             .Register<IMeasuresComponentTreeService,MeasuresComponentTreeService>()
             .Register<IDuplicationsShowService,DuplicationsShowService>()
-            .Reqister<ICustomMeasuresSearchService,
+            .Register<ICustomMeasuresSearchService,CustomMeasuresSearchService>()
             ;
         }
     }
