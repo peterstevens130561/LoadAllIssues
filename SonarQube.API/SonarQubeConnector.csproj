@@ -106,7 +106,7 @@
     <Compile Include="Models\Author.cs" />
     <Compile Include="Models\Changelog.cs" />
     <Compile Include="Models\Commit.cs" />
-    <Compile Include="Models\CustomMeasuresPage.cs" />
+    <Compile Include="Models\CustomMeasure.cs" />
     <Compile Include="Models\Diff.cs" />
     <Compile Include="Models\Duplicates.cs" />
     <Compile Include="Models\MeasuresComponentTree.cs" />
@@ -115,6 +115,8 @@
     <Compile Include="Models\Profile.cs" />
     <Compile Include="Models\ProfilesResponse.cs" />
     <Compile Include="Services\Factory\DefaultServiceFactory.cs" />
+    <Compile Include="Services\Implementations\CustomMeasures\Search\ICustomMeasuresSearchService.cs" />
+    <Compile Include="Services\Implementations\CustomMeasures\Search\CustomMeasuresSearchService.cs" />
     <Compile Include="Services\Implementations\Duplications\Show\IDuplicationsShowService.cs" />
     <Compile Include="Services\Implementations\Duplications\Show\DuplicationsShowService.cs" />
     <Compile Include="Services\Implementations\Measures\ComponentTree\IMeasuresComponentTreeService.cs" />
