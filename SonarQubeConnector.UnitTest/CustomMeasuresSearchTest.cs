@@ -151,7 +151,7 @@ namespace Connector.UnitTest
             var measures= JsonConvert.DeserializeObject<CustomMeasuresSearchPage>(pageResponse);
             Assert.AreEqual(3, measures.CustomMeasures.Count);
             var measure1 = measures.CustomMeasures[0];
-            Assert.AreEqual(42, measure1.Value);
+            Assert.AreEqual("42", measure1.Value);
         }
 
     }

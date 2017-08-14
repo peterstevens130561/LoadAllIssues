@@ -35,31 +35,31 @@ namespace Connector.UnitTest
         [TestMethod]
         public void PageTest()
         {
-            throw new NotImplementedException();
-        }
-
-        [TestMethod]
-        public void ParametersTest()
-        {
-            throw new NotImplementedException();
-        }
-
-        [TestMethod]
-        public void DeserializationTest()
-        {
             var client = new Mock<IRestClient>();
             var restParameters = new Mock<IRestParameters>();
             client.Setup(p => p.SetPath(It.IsAny<string>())).Returns(client.Object);
             IProjectsProvisionedService service = new ProjectsProvisionedService(client.Object, restParameters.Object);
 
             string response = pageResponse;
-            client.SetupSequence(p => p.Get(It.IsAny<IRestParameters>())).Returns(response).Returns(endResponse) ;
+            client.SetupSequence(p => p.Get(It.IsAny<IRestParameters>())).Returns(response).Returns(endResponse);
             var projects = service.Execute();
             Assert.AreEqual(2, projects.Count);
-
         }
+
         [TestMethod]
-        public void TestPageDeserialization()
+        public void ParametersTest()
+        {
+            Mock<IRestClient> client = new Mock<IRestClient>();
+            Mock<IRestParameters> restParameters = new Mock<IRestParameters>();
+            IProjectsProvisionedService  service= new ProjectsProvisionedService(client.Object, restParameters.Object);
+            var next=service.SetFilter("sonar");
+
+            Assert.IsInstanceOfType(service,typeof(IProjectsProvisionedService));
+            restParameters.Verify(p => p.SetParameter(@"q", @"sonar"));
+        }
+
+        [TestMethod]
+        public void DeserializationTest()
         {
             var provisionedProjects = JsonConvert.DeserializeObject<ProjectsProvisionedPage>(pageResponse);
 
