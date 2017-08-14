@@ -30,6 +30,8 @@ namespace Connector.UnitTest
   ""p"": 1,
   ""ps"": 100
 }";
+
+        private string endResponse = @"{}";
         [TestMethod]
         public void PageTest()
         {
@@ -42,11 +44,25 @@ namespace Connector.UnitTest
             throw new NotImplementedException();
         }
 
-
         [TestMethod]
         public void DeserializationTest()
         {
+            var client = new Mock<IRestClient>();
+            var restParameters = new Mock<IRestParameters>();
+            client.Setup(p => p.SetPath(It.IsAny<string>())).Returns(client.Object);
+            IProjectsProvisionedService service = new ProjectsProvisionedService(client.Object, restParameters.Object);
+
+            string response = pageResponse;
+            client.SetupSequence(p => p.Get(It.IsAny<IRestParameters>())).Returns(response).Returns(endResponse) ;
+            var projects = service.Execute();
+            Assert.AreEqual(2, projects.Count);
+
+        }
+        [TestMethod]
+        public void TestPageDeserialization()
+        {
             var provisionedProjects = JsonConvert.DeserializeObject<ProjectsProvisionedPage>(pageResponse);
+
             Assert.AreEqual(2, provisionedProjects.Projects.Count);
             var project = provisionedProjects.Projects[0];
             Assert.AreEqual("ce4c03d6-430f-40a9-b777-ad877c00aa4d", project.Uuid);
@@ -59,7 +75,6 @@ namespace Connector.UnitTest
             Assert.AreEqual("com.microsoft.roslyn:roslyn", project.Key);
             Assert.AreEqual("Roslyn", project.Name);
             Assert.AreEqual(DateTime.Parse("2013-03-04T23:03:44+0100"), project.CreationDate);
-
         }
     }
 }
