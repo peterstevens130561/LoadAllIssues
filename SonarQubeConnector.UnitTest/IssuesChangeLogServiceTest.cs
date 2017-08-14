@@ -30,7 +30,11 @@ namespace PeterSoft.SonarQube.Connector.UnitTest
             var restParameters = new Mock<IRestParameters>();
             IIssuesChangelogService service = new IssuesChangelogService(client.Object, restParameters.Object);
 
-            string response = @"{ ""changelog"":[{""user"":""stevpet"",""userName"":""Stevens, Peter"",""email"":""peter.stevens@bakerhughes.com"",""creationDate"":""2017-01-28T08:33:09+0100"",""diffs"":[{""key"":""resolution"",""newValue"":""WONTFIX""},{""key"":""assignee""},{""key"":""status"",""newValue"":""RESOLVED"",""oldValue"":""OPEN""}]}]}";
+            string response = @"{ ""changelog"":[{""user"":""stevpet"",
+    ""userName"":""Stevens, Peter"",
+    ""email"":""peter.stevens@bakerhughes.com"",
+    ""creationDate"":""2017-01-28T08:33:09+0100"",
+    ""diffs"":[{""key"":""resolution"",""newValue"":""WONTFIX""},{""key"":""assignee""},{""key"":""status"",""newValue"":""RESOLVED"",""oldValue"":""OPEN""}]}]}";
             client.Setup(p => p.SetPath(It.IsAny<string>())).Returns(client.Object);
             client.Setup(p => p.Get(It.IsAny<IRestParameters>())).Returns(response);
 
@@ -42,9 +46,8 @@ namespace PeterSoft.SonarQube.Connector.UnitTest
             Assert.AreEqual("stevpet", changelog.User);
             Assert.AreEqual("Stevens, Peter", changelog.UserName);
             Assert.AreEqual("peter.stevens@bakerhughes.com", changelog.Email);
-            long ticks = 636211639890000000;
-            
-            Assert.AreEqual(ticks, changelog.CreationDate.Ticks);
+            var expected = DateTime.Parse("2017-01-28T08:33:09+0100");
+            Assert.AreEqual(expected,changelog.CreationDate);
             Assert.AreEqual(3, changelog.Diffs.Count);
         }
 
