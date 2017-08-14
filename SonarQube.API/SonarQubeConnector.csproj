@@ -114,6 +114,7 @@
     <Compile Include="Models\PluginsAvailable.cs" />
     <Compile Include="Models\Profile.cs" />
     <Compile Include="Models\ProfilesResponse.cs" />
+    <Compile Include="Models\VerboseProject.cs" />
     <Compile Include="Services\Factory\DefaultServiceFactory.cs" />
     <Compile Include="Services\Implementations\CustomMeasures\Search\ICustomMeasuresSearchService.cs" />
     <Compile Include="Services\Implementations\CustomMeasures\Search\CustomMeasuresSearchService.cs" />
@@ -130,6 +131,8 @@
     <Compile Include="Connector\SonarQubeConnector.cs" />
     <Compile Include="Connector\API\ISession.cs" />
     <Compile Include="Commands\Implementations\Projects\Create\ProjectsCreateCommand.cs" />
+    <Compile Include="Services\Implementations\Projects\Provisioned\IProjectsProvisionedService.cs" />
+    <Compile Include="Services\Implementations\Projects\Provisioned\ProjectsProvisionedService.cs" />
     <Compile Include="Services\Infrastructure\IService.cs" />
     <Compile Include="Services\Implementations\Issues\Authors\IIssuesAuthorsService.cs" />
     <Compile Include="Services\Implementations\Issues\Authors\IssuesAuthorsService.cs" />
@@ -175,11 +178,11 @@
     <Compile Include="Services\Implementations\QualityProfiles\Search\QualityProfilesSearchService.cs" />
     <Compile Include="Services\Implementations\Resources\IResourcesService.cs" />
     <Compile Include="Services\Implementations\Issues\Search\IIssuesSearchService.cs" />
-    <Compile Include="Services\Implementations\ProjectsIndex\Index\IProjectsIndexService.cs" />
+    <Compile Include="Services\Implementations\Projects\Index\IProjectsIndexService.cs" />
     <Compile Include="Services\Implementations\Rules\Search\IRulesSearchService.cs" />
     <Compile Include="Services\Implementations\Rules\Show\IRulesShowService.cs" />
     <Compile Include="Services\Implementations\Issues\Search\IssuesSearchService.cs" />
-    <Compile Include="Services\Implementations\ProjectsIndex\Index\ProjectsIndexService.cs" />
+    <Compile Include="Services\Implementations\Projects\Index\ProjectsIndexService.cs" />
     <Compile Include="Services\Implementations\Resources\ResourcesService.cs" />
     <Compile Include="Services\Implementations\Rules\Show\RuleShowService.cs" />
     <Compile Include="Services\Implementations\Rules\Search\RulesSearchService.cs" />

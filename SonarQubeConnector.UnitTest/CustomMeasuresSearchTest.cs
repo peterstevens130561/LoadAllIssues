@@ -148,10 +148,10 @@ namespace Connector.UnitTest
         [TestMethod]
         public void TestPageDeserialization()
         {
-            var measures= JsonConvert.DeserializeObject<CustomMeasuresPage>(pageResponse);
-            Assert.AreEqual(3, measures.customMeasures.Count);
-            var measure1 = measures.customMeasures[0];
-            Assert.AreEqual(42, measure1.value);
+            var measures= JsonConvert.DeserializeObject<CustomMeasuresSearchPage>(pageResponse);
+            Assert.AreEqual(3, measures.CustomMeasures.Count);
+            var measure1 = measures.CustomMeasures[0];
+            Assert.AreEqual(42, measure1.Value);
         }
 
     }
